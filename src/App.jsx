@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollProgressBar from './components/ScrollProgressBar';
+import BackToTop from './components/BackToTop';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Service from './pages/Service';
 import FunCity from './pages/FunCity';
@@ -15,7 +18,9 @@ import './App.css';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
+        <ScrollProgressBar />
         <Header />
         <main className="main-content">
           <Routes>
@@ -30,6 +35,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <BackToTop />
       </div>
     </Router>
   );

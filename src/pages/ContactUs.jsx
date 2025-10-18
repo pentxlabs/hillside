@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const ContactUs = () => {
+  const [contactMethodsRef, contactMethodsVisible] = useScrollAnimation();
+  const [formRef, formVisible] = useScrollAnimation();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -66,19 +70,19 @@ const ContactUs = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-content animate-fadeInDown">
             <h1>Contact HillSide</h1>
-            <p>Get in touch with us for inquiries, bookings, and exceptional service</p>
+            <p className="delay-200">Get in touch with us for inquiries, bookings, and exceptional service</p>
           </div>
         </div>
       </section>
 
       {/* Contact Methods */}
-      <section className="contact-methods-section">
+      <section className="contact-methods-section" ref={contactMethodsRef}>
         <div className="container">
-          <div className="contact-methods-grid">
+          <div className={`contact-methods-grid ${contactMethodsVisible ? 'scroll-stagger-children scroll-animate-visible' : 'scroll-stagger-children'}`}>
             {contactMethods.map((method, index) => (
-              <a key={index} href={method.action} className="contact-method-card">
+              <a key={index} href={method.action} className="contact-method-card hover-lift">
                 <div className="contact-method-icon">
                   {method.icon}
                 </div>
@@ -92,10 +96,10 @@ const ContactUs = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="contact-form-section">
+      <section className="contact-form-section" ref={formRef}>
         <div className="container">
           <div className="contact-content">
-            <div className="contact-info">
+            <div className={`contact-info ${formVisible ? 'scroll-fade-left scroll-animate-visible' : 'scroll-fade-left'}`}>
               <h2>Let's Start a Conversation</h2>
               <p>
                 We're here to help you with all your needs. Whether you're planning a wedding, 
@@ -133,7 +137,7 @@ const ContactUs = () => {
               </div>
             </div>
             
-            <div className="contact-form-container">
+            <div className={`contact-form-container ${formVisible ? 'scroll-fade-right scroll-animate-visible' : 'scroll-fade-right'}`}>
               <form onSubmit={handleSubmit} className="contact-form">
                 <h3>Send Us a Message</h3>
                 

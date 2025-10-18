@@ -1,8 +1,13 @@
 import React from 'react';
 import { CheckCircle, Star, Award, Clock, Shield, Car, Wrench, Droplets, Gauge } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Service = () => {
+  const [servicesRef, servicesVisible] = useScrollAnimation();
+  const [packagesRef, packagesVisible] = useScrollAnimation();
+  const [whyChooseRef, whyChooseVisible] = useScrollAnimation();
+
   const services = [
     {
       icon: <Droplets className="service-icon" />,
@@ -76,10 +81,10 @@ const Service = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-content animate-fadeInDown">
             <h1>HillSide Express & Lube Services</h1>
-            <p>Professional automotive services with quick, reliable, and quality care for your vehicle</p>
-            <div className="hero-stats">
+            <p className="delay-200">Professional automotive services with quick, reliable, and quality care for your vehicle</p>
+            <div className="hero-stats stagger-animation">
               <div className="stat-item">
                 <strong>15 Min</strong>
                 <span>Express Service</span>
@@ -98,15 +103,15 @@ const Service = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="services-section">
+      <section className="services-section" ref={servicesRef}>
         <div className="container">
-          <div className="section-header">
+          <div className={`section-header ${servicesVisible ? 'scroll-fade-up scroll-animate-visible' : 'scroll-fade-up'}`}>
             <h2>Our Automotive Services</h2>
             <p>Comprehensive vehicle care from oil changes to complete automotive solutions</p>
           </div>
-          <div className="services-grid">
+          <div className={`services-grid ${servicesVisible ? 'scroll-stagger-children scroll-animate-visible' : 'scroll-stagger-children'}`}>
             {services.map((service, index) => (
-              <div key={index} className="service-card-detailed">
+              <div key={index} className="service-card-detailed hover-lift">
                 <div className="service-header">
                   <div className="service-icon-wrapper">
                     {service.icon}
@@ -132,15 +137,15 @@ const Service = () => {
       </section>
 
       {/* Service Packages */}
-      <section className="packages-section">
+      <section className="packages-section" ref={packagesRef}>
         <div className="container">
-          <div className="section-header">
+          <div className={`section-header ${packagesVisible ? 'scroll-fade-up scroll-animate-visible' : 'scroll-fade-up'}`}>
             <h2>Service Packages</h2>
             <p>Choose the right service package for your vehicle's needs</p>
           </div>
-          <div className="packages-grid">
+          <div className={`packages-grid ${packagesVisible ? 'scroll-stagger-children scroll-animate-visible' : 'scroll-stagger-children'}`}>
             {servicePackages.map((pkg, index) => (
-              <div key={index} className={`package-card ${index === 1 ? 'featured' : ''}`}>
+              <div key={index} className={`package-card hover-lift ${index === 1 ? 'featured' : ''}`}>
                 {index === 1 && <div className="featured-badge">Most Popular</div>}
                 <h3>{pkg.title}</h3>
                 <div className="package-price">{pkg.price}</div>
@@ -162,13 +167,13 @@ const Service = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="why-choose-section">
+      <section className="why-choose-section" ref={whyChooseRef}>
         <div className="container">
-          <div className="section-header">
+          <div className={`section-header ${whyChooseVisible ? 'scroll-fade-up scroll-animate-visible' : 'scroll-fade-up'}`}>
             <h2>Why Choose HillSide Express & Lube?</h2>
             <p>We're committed to providing the best automotive service experience</p>
           </div>
-          <div className="features-grid">
+          <div className={`features-grid ${whyChooseVisible ? 'scroll-stagger-children scroll-animate-visible' : 'scroll-stagger-children'}`}>
             {whyChooseUs.map((feature, index) => (
               <div key={index} className="feature-card">
                 <div className="feature-icon-wrapper">

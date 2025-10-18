@@ -1,8 +1,12 @@
 import React from 'react';
 import { Home, Wifi, Car, Utensils, Shield, Star, Users, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Villas = () => {
+  const [typesRef, typesVisible] = useScrollAnimation();
+  const [amenitiesRef, amenitiesVisible] = useScrollAnimation();
+
   const villaTypes = [
     {
       icon: <Home className="villa-icon" />,
@@ -55,10 +59,10 @@ const Villas = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-content animate-fadeInDown">
             <h1>Luxury Villas</h1>
-            <p>Experience unparalleled comfort in our premium villa collection</p>
-            <div className="hero-buttons">
+            <p className="delay-200">Experience unparalleled comfort in our premium villa collection</p>
+            <div className="hero-buttons animate-fadeInUp delay-400">
               <Link to="/contact" className="cta-button primary">
                 Book Your Stay
               </Link>
@@ -73,7 +77,7 @@ const Villas = () => {
       {/* Features Overview */}
       <section className="features-overview">
         <div className="container">
-          <div className="features-grid">
+          <div className="features-grid stagger-animation">
             <div className="feature-item">
               <div className="feature-number">50+</div>
               <p>Premium Villas</p>
@@ -95,15 +99,15 @@ const Villas = () => {
       </section>
 
       {/* Villa Types */}
-      <section className="villa-types-section" id="villas">
+      <section className="villa-types-section" id="villas" ref={typesRef}>
         <div className="container">
-          <div className="section-header">
+          <div className={`section-header ${typesVisible ? 'scroll-fade-up scroll-animate-visible' : 'scroll-fade-up'}`}>
             <h2>Villa Collection</h2>
             <p>Choose from our exclusive range of luxury villas designed for comfort and elegance</p>
           </div>
-          <div className="villa-types-grid">
+          <div className={`villa-types-grid ${typesVisible ? 'scroll-stagger-children scroll-animate-visible' : 'scroll-stagger-children'}`}>
             {villaTypes.map((villa, index) => (
-              <div key={index} className="villa-card">
+              <div key={index} className="villa-card hover-lift">
                 <div className="villa-header">
                   <div className="villa-icon-wrapper">
                     {villa.icon}
@@ -132,13 +136,13 @@ const Villas = () => {
       </section>
 
       {/* Amenities */}
-      <section className="amenities-section">
+      <section className="amenities-section" ref={amenitiesRef}>
         <div className="container">
-          <div className="section-header">
+          <div className={`section-header ${amenitiesVisible ? 'scroll-fade-up scroll-animate-visible' : 'scroll-fade-up'}`}>
             <h2>Premium Amenities</h2>
             <p>Every villa comes equipped with world-class amenities for your comfort</p>
           </div>
-          <div className="amenities-grid">
+          <div className={`amenities-grid ${amenitiesVisible ? 'scroll-stagger-children scroll-animate-visible' : 'scroll-stagger-children'}`}>
             {amenities.map((amenity, index) => (
               <div key={index} className="amenity-card">
                 <div className="amenity-icon-wrapper">

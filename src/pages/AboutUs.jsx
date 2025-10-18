@@ -2,8 +2,15 @@
 
 import React from 'react';
 import { Award, Target, Heart, Star, TrendingUp } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const AboutUs = () => {
+  // Scroll animation hooks
+  const [storyRef, storyVisible] = useScrollAnimation();
+  const [missionRef, missionVisible] = useScrollAnimation();
+  const [valuesRef, valuesVisible] = useScrollAnimation();
+  const [achievementsRef, achievementsVisible] = useScrollAnimation();
+
   const values = [
     {
       icon: <Award className="value-icon" />,
@@ -39,18 +46,18 @@ const AboutUs = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-content animate-fadeInDown">
             <h1>About HillSide</h1>
-            <p>Excellence in hospitality and premium services since 2014</p>
+            <p className="delay-200">Excellence in hospitality and premium services since 2014</p>
           </div>
         </div>
       </section>
 
       {/* Story Section */}
-      <section className="story-section">
+      <section className="story-section" ref={storyRef}>
         <div className="container">
           <div className="story-content">
-            <div className="story-text">
+            <div className={`story-text ${storyVisible ? 'scroll-fade-left scroll-animate-visible' : 'scroll-fade-left'}`}>
               <h2>Our Story</h2>
               <p>
                 Founded in 2014, HillSide began with a simple vision: to create exceptional experiences 
@@ -68,7 +75,7 @@ const AboutUs = () => {
                 our customers' needs at the forefront.
               </p>
             </div>
-            <div className="story-image">
+            <div className={`story-image ${storyVisible ? 'scroll-fade-right scroll-animate-visible' : 'scroll-fade-right'}`}>
               <div className="image-placeholder">
                 Our Journey of Excellence
               </div>
@@ -78,10 +85,10 @@ const AboutUs = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="mission-vision-section">
+      <section className="mission-vision-section" ref={missionRef}>
         <div className="container">
           <div className="mission-vision-grid">
-            <div className="mission-card">
+            <div className={`mission-card hover-lift ${missionVisible ? 'scroll-scale-in scroll-animate-visible' : 'scroll-scale-in'}`}>
               <Target className="mv-icon" />
               <h3>Our Mission</h3>
               <p>
@@ -90,7 +97,7 @@ const AboutUs = () => {
                 highest standards of quality and professionalism.
               </p>
             </div>
-            <div className="vision-card">
+            <div className={`vision-card hover-lift ${missionVisible ? 'scroll-scale-in scroll-animate-visible' : 'scroll-scale-in'} scroll-animate-delay-2`}>
               <Star className="mv-icon" />
               <h3>Our Vision</h3>
               <p>
@@ -104,13 +111,13 @@ const AboutUs = () => {
       </section>
 
       {/* Values Section */}
-      <section className="values-section">
+      <section className="values-section" ref={valuesRef}>
         <div className="container">
-          <div className="section-header">
+          <div className={`section-header ${valuesVisible ? 'scroll-fade-up scroll-animate-visible' : 'scroll-fade-up'}`}>
             <h2>Our Core Values</h2>
             <p>The principles that guide us in everything we do</p>
           </div>
-          <div className="values-grid">
+          <div className={`values-grid ${valuesVisible ? 'scroll-stagger-children scroll-animate-visible' : 'scroll-stagger-children'}`}>
             {values.map((value, index) => (
               <div key={index} className="value-card">
                 <div className="value-icon-wrapper">
@@ -125,13 +132,13 @@ const AboutUs = () => {
       </section>
 
       {/* Achievements */}
-      <section className="achievements-section">
+      <section className="achievements-section" ref={achievementsRef}>
         <div className="container">
-          <div className="section-header">
+          <div className={`section-header ${achievementsVisible ? 'scroll-fade-up scroll-animate-visible' : 'scroll-fade-up'}`}>
             <h2>Our Achievements</h2>
             <p>Numbers that reflect our commitment to excellence</p>
           </div>
-          <div className="achievements-grid">
+          <div className={`achievements-grid ${achievementsVisible ? 'scroll-stagger-children scroll-animate-visible' : 'scroll-stagger-children'}`}>
             {achievements.map((achievement, index) => (
               <div key={index} className="achievement-item">
                 <h3>{achievement.number}</h3>

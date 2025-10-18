@@ -73,10 +73,10 @@ const Residencies = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-content animate-fadeInDown">
             <h1>Premium Residencies</h1>
-            <p>Discover your perfect home in our exclusive residential communities</p>
-            <div className="hero-buttons">
+            <p className="delay-200">Discover your perfect home in our exclusive residential communities</p>
+            <div className="hero-buttons animate-fadeInUp delay-400">
               <Link to="/contact" className="cta-button primary">
                 Schedule Tour
               </Link>
@@ -91,7 +91,7 @@ const Residencies = () => {
       {/* Stats Section */}
       <section className="stats-section">
         <div className="container">
-          <div className="stats-grid">
+          <div className="stats-grid stagger-animation">
             <div className="stat-item">
               <div className="stat-number">200+</div>
               <p>Premium Units</p>
@@ -115,13 +115,13 @@ const Residencies = () => {
       {/* Property Types */}
       <section className="property-types-section" id="properties">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-fadeInUp">
             <h2>Property Collection</h2>
             <p>Choose from our diverse range of premium residential properties</p>
           </div>
           <div className="property-types-grid">
             {propertyTypes.map((property, index) => (
-              <div key={index} className="property-card">
+              <div key={index} className="property-card hover-lift animate-scaleIn" style={{animationDelay: `${index * 0.15}s`}}>
                 <div className="property-header">
                   <div className="property-icon-wrapper">
                     {property.icon}
@@ -152,11 +152,11 @@ const Residencies = () => {
       {/* Community Features */}
       <section className="community-section">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-fadeInUp">
             <h2>Community Features</h2>
             <p>Enjoy world-class amenities designed for modern living</p>
           </div>
-          <div className="community-grid">
+          <div className="community-grid stagger-animation">
             {communityFeatures.map((feature, index) => (
               <div key={index} className="community-card">
                 <div className="feature-icon-wrapper">
@@ -173,13 +173,13 @@ const Residencies = () => {
       {/* Neighborhoods */}
       <section className="neighborhoods-section">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-fadeInUp">
             <h2>Prime Neighborhoods</h2>
             <p>Strategic locations offering the best of urban and suburban living</p>
           </div>
           <div className="neighborhoods-grid">
             {neighborhoods.map((neighborhood, index) => (
-              <div key={index} className="neighborhood-card">
+              <div key={index} className="neighborhood-card hover-lift animate-fadeInUp" style={{animationDelay: `${index * 0.15}s`}}>
                 <div className="neighborhood-header">
                   <MapPin className="neighborhood-icon" />
                   <h3>{neighborhood.name}</h3>

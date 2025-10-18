@@ -56,10 +56,10 @@ const FunCity = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-content animate-fadeInDown">
             <h1>Fun City Entertainment</h1>
-            <p>Where endless fun meets unforgettable memories for the whole family</p>
-            <div className="hero-buttons">
+            <p className="delay-200">Where endless fun meets unforgettable memories for the whole family</p>
+            <div className="hero-buttons animate-fadeInUp delay-400">
               <Link to="/contact" className="cta-button primary">
                 Book Your Visit
               </Link>
@@ -74,7 +74,7 @@ const FunCity = () => {
       {/* Quick Info */}
       <section className="quick-info-section">
         <div className="container">
-          <div className="info-grid">
+          <div className="info-grid stagger-animation">
             <div className="info-item">
               <Clock className="info-icon" />
               <h4>Operating Hours</h4>
@@ -102,13 +102,13 @@ const FunCity = () => {
       {/* Attractions */}
       <section className="attractions-section" id="attractions">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-fadeInUp">
             <h2>Popular Attractions</h2>
             <p>Discover exciting activities and entertainment for all ages</p>
           </div>
           <div className="attractions-grid">
             {attractions.map((attraction, index) => (
-              <div key={index} className="attraction-card">
+              <div key={index} className="attraction-card hover-lift animate-fadeInUp" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="attraction-header">
                   <div className="attraction-icon-wrapper">
                     {attraction.icon}
@@ -133,13 +133,13 @@ const FunCity = () => {
       {/* Packages */}
       <section className="packages-section">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-fadeInUp">
             <h2>Exciting Packages</h2>
             <p>Choose the perfect package for your Fun City experience</p>
           </div>
           <div className="packages-grid">
             {packages.map((pkg, index) => (
-              <div key={index} className="package-card">
+              <div key={index} className="package-card hover-lift animate-scaleIn" style={{animationDelay: `${index * 0.15}s`}}>
                 <div className="package-header">
                   <h3>{pkg.name}</h3>
                   <div className="price">

@@ -62,10 +62,10 @@ const WeddingHires = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-content animate-fadeInDown">
             <h1>Wedding Services</h1>
-            <p>Creating magical moments for your perfect wedding day</p>
-            <div className="hero-buttons">
+            <p className="delay-200">Creating magical moments for your perfect wedding day</p>
+            <div className="hero-buttons animate-fadeInUp delay-400">
               <Link to="/contact" className="cta-button primary">
                 Plan Your Wedding
               </Link>
@@ -80,7 +80,7 @@ const WeddingHires = () => {
       {/* Quick Stats */}
       <section className="stats-section">
         <div className="container">
-          <div className="stats-grid">
+          <div className="stats-grid stagger-animation">
             <div className="stat-item">
               <div className="stat-number">500+</div>
               <p>Weddings Organized</p>
@@ -104,13 +104,13 @@ const WeddingHires = () => {
       {/* Services */}
       <section className="services-section" id="services">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-fadeInUp">
             <h2>Complete Wedding Services</h2>
             <p>Everything you need for your perfect wedding day, all in one place</p>
           </div>
           <div className="services-grid">
             {services.map((service, index) => (
-              <div key={index} className="service-card">
+              <div key={index} className="service-card hover-lift animate-fadeInUp" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="service-header">
                   <div className="service-icon-wrapper">
                     {service.icon}
@@ -135,13 +135,13 @@ const WeddingHires = () => {
       {/* Wedding Packages */}
       <section className="packages-section">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-fadeInUp">
             <h2>Wedding Packages</h2>
             <p>Choose the perfect package that matches your dream wedding vision</p>
           </div>
           <div className="packages-grid">
             {packages.map((pkg, index) => (
-              <div key={index} className={`package-card ${index === 1 ? 'featured' : ''}`}>
+              <div key={index} className={`package-card hover-lift animate-scaleIn ${index === 1 ? 'featured' : ''}`} style={{animationDelay: `${index * 0.15}s`}}>
                 {index === 1 && <div className="featured-badge">Most Popular</div>}
                 <div className="package-header">
                   <h3>{pkg.name}</h3>
