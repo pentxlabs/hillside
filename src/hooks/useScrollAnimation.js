@@ -20,27 +20,36 @@ export const useScrollAnimation = (options = {}) => {
       ...options
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          if (defaultOptions.triggerOnce) {
-            observer.unobserve(entry.target);
+    // Add a small delay to ensure scroll position is settled
+    const timeoutId = setTimeout(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            if (defaultOptions.triggerOnce) {
+              observer.unobserve(entry.target);
+            }
+          } else if (!defaultOptions.triggerOnce) {
+            setIsVisible(false);
           }
-        } else if (!defaultOptions.triggerOnce) {
-          setIsVisible(false);
-        }
+        });
+      }, {
+        threshold: defaultOptions.threshold,
+        rootMargin: defaultOptions.rootMargin
       });
-    }, {
-      threshold: defaultOptions.threshold,
-      rootMargin: defaultOptions.rootMargin
-    });
 
-    observer.observe(element);
+      if (element) {
+        observer.observe(element);
+      }
+
+      // Store observer for cleanup
+      element._observer = observer;
+    }, 150);
 
     return () => {
-      if (element) {
-        observer.unobserve(element);
+      clearTimeout(timeoutId);
+      if (element && element._observer) {
+        element._observer.unobserve(element);
       }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -1,13 +1,24 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Car } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+    // Smooth scroll to top when link is clicked
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (
@@ -19,14 +30,14 @@ const Header = () => {
         </div>
         
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-          <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
-          <Link to="/service" onClick={() => setIsMenuOpen(false)}>Service</Link>
-          <Link to="/funcity" onClick={() => setIsMenuOpen(false)}>Fun City</Link>
-          <Link to="/villas" onClick={() => setIsMenuOpen(false)}>Villas</Link>
-          <Link to="/wedding-hires" onClick={() => setIsMenuOpen(false)}>Wedding Hires</Link>
-          <Link to="/residencies" onClick={() => setIsMenuOpen(false)}>Residencies</Link>
-          <Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link>
-          <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
+          <Link to="/" onClick={handleLinkClick} className={location.pathname === '/' ? 'active' : ''}>Home</Link>
+          <Link to="/service" onClick={handleLinkClick} className={location.pathname === '/service' ? 'active' : ''}>Service</Link>
+          <Link to="/funcity" onClick={handleLinkClick} className={location.pathname === '/funcity' ? 'active' : ''}>Fun City</Link>
+          <Link to="/villas" onClick={handleLinkClick} className={location.pathname === '/villas' ? 'active' : ''}>Villas</Link>
+          <Link to="/wedding-hires" onClick={handleLinkClick} className={location.pathname === '/wedding-hires' ? 'active' : ''}>Wedding Hires</Link>
+          <Link to="/residencies" onClick={handleLinkClick} className={location.pathname === '/residencies' ? 'active' : ''}>Residencies</Link>
+          <Link to="/about" onClick={handleLinkClick} className={location.pathname === '/about' ? 'active' : ''}>About Us</Link>
+          <Link to="/contact" onClick={handleLinkClick} className={location.pathname === '/contact' ? 'active' : ''}>Contact Us</Link>
         </nav>
 
         <button className="menu-toggle" onClick={toggleMenu}>

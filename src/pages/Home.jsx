@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Star, Users, Award, MapPin, Phone, Shield, Clock, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import ImageSlider from '../components/image-display/ImageSlider';
 import './Home.css';
 
 const Home = () => {
@@ -13,30 +14,135 @@ const Home = () => {
   const [testimonialsRef, testimonialsVisible] = useScrollAnimation();
   const [ctaRef, ctaVisible] = useScrollAnimation();
 
+  // Hero slider images
+  const heroImages = [
+    {
+      url: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1920&q=80',
+      alt: 'Luxury Villa with Pool',
+      title: 'Luxury Villas',
+      description: 'Experience unparalleled luxury in our premium villas'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1519167758481-83f29da8fd2a?w=1920&q=80',
+      alt: 'Wedding Celebration',
+      title: 'Wedding Services',
+      description: 'Make your special day unforgettable'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1920&q=80',
+      alt: 'Fun City Entertainment',
+      title: 'Fun City',
+      description: 'Family entertainment at its finest'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=80',
+      alt: 'Premium Residencies',
+      title: 'Residencies',
+      description: 'Exclusive living spaces in prime locations'
+    }
+  ];
+
+  // Service-specific images
+  const villaImages = [
+    {
+      url: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80',
+      alt: 'Modern Villa Exterior',
+      title: 'Modern Architecture'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      alt: 'Luxury Villa Interior',
+      title: 'Luxury Interiors'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+      alt: 'Villa Pool Area',
+      title: 'Private Pool'
+    }
+  ];
+
+  const weddingImages = [
+    {
+      url: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=80',
+      alt: 'Wedding Venue',
+      title: 'Beautiful Venues'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80',
+      alt: 'Wedding Decoration',
+      title: 'Elegant Decor'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80',
+      alt: 'Wedding Ceremony',
+      title: 'Perfect Ceremonies'
+    }
+  ];
+
+  const funCityImages = [
+    {
+      url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+      alt: 'Fun City Rides',
+      title: 'Exciting Rides'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=800&q=80',
+      alt: 'Family Entertainment',
+      title: 'Family Fun'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1556103255-4443dbae8e5a?w=800&q=80',
+      alt: 'Fun City Activities',
+      title: 'Fun Activities'
+    }
+  ];
+
+  const residencyImages = [
+    {
+      url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80',
+      alt: 'Premium Residency',
+      title: 'Prime Location'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80',
+      alt: 'Modern Residence',
+      title: 'Modern Living'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+      alt: 'Luxury Apartment',
+      title: 'Luxury Spaces'
+    }
+  ];
+
   const services = [
     {
       icon: <Award className="service-icon" />,
       title: "Luxury Villas",
       description: "Premium villa rentals with world-class amenities and breathtaking views.",
-      link: "/villas"
+      link: "/villas",
+      images: villaImages
     },
     {
       icon: <Users className="service-icon" />,
       title: "Wedding Services",
       description: "Complete wedding planning and hire services for your perfect day.",
-      link: "/wedding-hires"
+      link: "/wedding-hires",
+      images: weddingImages
     },
     {
       icon: <Star className="service-icon" />,
       title: "Fun City Entertainment",
       description: "Family entertainment destination with rides, games, and activities.",
-      link: "/funcity"
+      link: "/funcity",
+      images: funCityImages
     },
     {
       icon: <MapPin className="service-icon" />,
       title: "Premium Residencies",
       description: "Exclusive residential properties in prime locations.",
-      link: "/residencies"
+      link: "/residencies",
+      images: residencyImages
     }
   ];
 
@@ -93,23 +199,30 @@ const Home = () => {
 
   return (
     <div className="home">
-      {/* Hero Section */}
+      {/* Hero Section with Image Slider */}
       <section className="hero-section">
-        <div className="hero-content">
-          <h1 className="animate-fadeInDown">Welcome to HillSide</h1>
-          <p className="animate-fadeInUp delay-200">Your premier destination for luxury living, entertainment, and exceptional service</p>
-          <div className="hero-buttons animate-fadeInUp delay-400">
-            <Link to="/service" className="cta-button primary">
-              Explore Services <ArrowRight size={20} />
-            </Link>
-            <Link to="/contact" className="cta-button secondary">
-              Contact Us
-            </Link>
-          </div>
-        </div>
-        <div className="hero-image animate-fadeInRight delay-300">
-          <div className="hero-placeholder">
-            Premium Lifestyle Awaits
+        <div className="hero-slider-wrapper">
+          <ImageSlider 
+            images={heroImages} 
+            autoPlay={true} 
+            interval={5000}
+            showDots={true}
+            showArrows={true}
+            className="hero-slider"
+          />
+          <div className="hero-overlay">
+            <div className="hero-content">
+              <h1 className="animate-fadeInDown">Welcome to HillSide</h1>
+              <p className="animate-fadeInUp delay-200">Your premier destination for luxury living, entertainment, and exceptional service</p>
+              <div className="hero-buttons animate-fadeInUp delay-400">
+                <Link to="/service" className="cta-button primary">
+                  Explore Services <ArrowRight size={20} />
+                </Link>
+                <Link to="/contact" className="cta-button secondary">
+                  Contact Us
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -141,14 +254,26 @@ const Home = () => {
                 key={index} 
                 className={`service-card hover-lift ${servicesVisible ? 'scroll-scale-in scroll-animate-visible' : 'scroll-scale-in'} scroll-animate-delay-${index + 1}`}
               >
-                <div className="service-icon-wrapper">
-                  {service.icon}
+                <div className="service-image-slider">
+                  <ImageSlider 
+                    images={service.images} 
+                    autoPlay={true} 
+                    interval={4000}
+                    showDots={true}
+                    showArrows={false}
+                    className="service-slider"
+                  />
                 </div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <Link to={service.link} className="service-link">
-                  Learn More <ArrowRight size={16} />
-                </Link>
+                <div className="service-content">
+                  <div className="service-icon-wrapper">
+                    {service.icon}
+                  </div>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                  <Link to={service.link} className="service-link">
+                    Learn More <ArrowRight size={16} />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
