@@ -198,13 +198,6 @@ const Villas = () => {
           min-height: 100vh;
         }
 
-        .hero-section {
-          background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-          color: white;
-          padding: 120px 0 80px;
-          text-align: center;
-        }
-
         .container {
           max-width: 1200px;
           margin: 0 auto;
@@ -212,89 +205,43 @@ const Villas = () => {
         }
 
         .hero-content h1 {
-          font-size: 3.5rem;
+          font-size: 3rem;
           font-weight: 700;
           margin-bottom: 20px;
         }
 
         .hero-content p {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
           opacity: 0.9;
-          margin-bottom: 40px;
-          max-width: 600px;
-          margin-left: auto;
-          margin-right: auto;
+          max-width: 700px;
+          margin: 0 auto 40px;
         }
 
-        .hero-buttons {
+        .hero-stats {
           display: flex;
-          gap: 20px;
           justify-content: center;
+          gap: 60px;
+          margin-top: 40px;
         }
 
-        .cta-button {
-          padding: 15px 30px;
-          border-radius: 8px;
-          text-decoration: none;
-          font-weight: 600;
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          transition: all 0.3s ease;
-          border: 2px solid transparent;
-        }
-
-        .cta-button.primary {
-          background: #ff6b35;
-          color: white;
-        }
-
-        .cta-button.primary:hover {
-          background: #e55a2b;
-          transform: translateY(-2px);
-        }
-
-        .cta-button.secondary {
-          background: transparent;
-          color: white;
-          border: 2px solid white;
-        }
-
-        .cta-button.secondary:hover {
-          background: white;
-          color: #1e3c72;
-        }
-
-        .features-overview {
-          background: #f8f9fa;
-          padding: 60px 0;
-        }
-
-        .features-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 40px;
+        .stat-item {
           text-align: center;
         }
 
-        .feature-item {
-          padding: 20px;
-        }
-
-        .feature-number {
-          font-size: 3rem;
+        .stat-item strong {
+          display: block;
+          font-size: 2rem;
           font-weight: 700;
-          color: #ff6b35;
-          margin-bottom: 10px;
+          color: #dc2626;
+          margin-bottom: 5px;
         }
 
-        .feature-item p {
-          color: #666;
-          font-size: 1.1rem;
-          font-weight: 500;
+        .stat-item span {
+          font-size: 0.9rem;
+          opacity: 0.9;
         }
 
-        .villa-types-section {
+        .services-section {
           padding: 100px 0;
         }
 
@@ -304,8 +251,8 @@ const Villas = () => {
         }
 
         .section-header h2 {
-          font-size: 2.8rem;
-          color: #1e3c72;
+          font-size: 2.5rem;
+          color: #1e40af;
           margin-bottom: 20px;
           font-weight: 700;
         }
@@ -317,76 +264,70 @@ const Villas = () => {
           margin: 0 auto;
         }
 
-        .villa-types-grid {
+        .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
           gap: 40px;
         }
 
-        .villa-card {
+        .service-card-detailed {
           background: white;
-          padding: 30px;
+          padding: 40px;
           border-radius: 12px;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-          border: 1px solid #f0f0f0;
+          border: 1px solid #e5e7eb;
           transition: all 0.3s ease;
         }
 
-        .villa-card:hover {
+        .service-card-detailed:hover {
           transform: translateY(-5px);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .villa-header {
+        .service-header {
           display: flex;
           align-items: center;
           gap: 20px;
           margin-bottom: 20px;
         }
 
-        .villa-icon-wrapper {
+        .service-icon-wrapper {
           width: 60px;
           height: 60px;
-          background: linear-gradient(135deg, #1e3c72, #2a5298);
+          background: linear-gradient(135deg, #dc2626, #ef4444);
           border-radius: 12px;
           display: flex;
           align-items: center;
           justify-content: center;
         }
 
-        .villa-icon {
+        .service-icon {
           color: white;
           width: 30px;
           height: 30px;
         }
 
-        .villa-info h3 {
+        .service-header h3 {
           font-size: 1.5rem;
-          color: #1e3c72;
+          color: #1e40af;
           font-weight: 600;
-          margin: 0 0 5px 0;
+          margin: 0;
         }
 
-        .price {
-          color: #ff6b35;
-          font-weight: 600;
-          font-size: 1.1rem;
-        }
-
-        .villa-description {
+        .service-description {
           color: #666;
           line-height: 1.6;
           margin-bottom: 25px;
           font-size: 1.1rem;
         }
 
-        .villa-features {
+        .service-features {
           list-style: none;
           padding: 0;
           margin-bottom: 30px;
         }
 
-        .villa-features li {
+        .service-features li {
           display: flex;
           align-items: center;
           gap: 10px;
@@ -394,12 +335,106 @@ const Villas = () => {
           color: #333;
         }
 
-        .villa-features li svg {
+        .service-features li svg {
           color: #22c55e;
         }
 
-        .villa-btn {
-          background: #ff6b35;
+        .service-cta {
+          background: #dc2626;
+          color: white;
+          padding: 12px 24px;
+          border-radius: 6px;
+          text-decoration: none;
+          font-weight: 600;
+          display: inline-block;
+          transition: all 0.3s ease;
+        }
+
+        .service-cta:hover {
+          background: #b91c1c;
+          transform: translateX(5px);
+        }
+
+        .packages-section {
+          background: #f1f5f9;
+          padding: 100px 0;
+        }
+
+        .packages-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+        }
+
+        .package-card {
+          background: white;
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          text-align: center;
+          transition: all 0.3s ease;
+          position: relative;
+          border: 1px solid #e5e7eb;
+        }
+
+        .package-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .package-card.featured {
+          border: 2px solid #dc2626;
+          transform: scale(1.05);
+        }
+
+        .featured-badge {
+          position: absolute;
+          top: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #dc2626;
+          color: white;
+          padding: 5px 20px;
+          border-radius: 20px;
+          font-size: 0.9rem;
+          font-weight: 600;
+        }
+
+        .package-card h3 {
+          font-size: 1.5rem;
+          color: #1e40af;
+          margin-bottom: 15px;
+          font-weight: 600;
+        }
+
+        .package-price {
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: #dc2626;
+          margin-bottom: 25px;
+        }
+
+        .package-services {
+          list-style: none;
+          padding: 0;
+          margin-bottom: 30px;
+          text-align: left;
+        }
+
+        .package-services li {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 10px;
+          color: #333;
+        }
+
+        .package-services li svg {
+          color: #22c55e;
+        }
+
+        .package-btn {
+          background: #1e40af;
           color: white;
           padding: 12px 30px;
           border-radius: 6px;
@@ -408,37 +443,36 @@ const Villas = () => {
           display: inline-block;
           transition: all 0.3s ease;
           width: 100%;
-          text-align: center;
         }
 
-        .villa-btn:hover {
-          background: #e55a2b;
+        .package-btn:hover {
+          background: #1d4ed8;
           transform: translateY(-2px);
         }
 
-        .amenities-section {
-          background: #f8f9fa;
+        .why-choose-section {
           padding: 100px 0;
         }
 
-        .amenities-grid {
+        .features-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
           gap: 30px;
         }
 
-        .amenity-card {
+        .feature-card {
           background: white;
           padding: 30px;
           border-radius: 12px;
           text-align: center;
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+          border: 1px solid #e5e7eb;
         }
 
-        .amenity-icon-wrapper {
+        .feature-icon-wrapper {
           width: 60px;
           height: 60px;
-          background: linear-gradient(135deg, #ff6b35, #f7931e);
+          background: linear-gradient(135deg, #1e40af, #3b82f6);
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -446,118 +480,41 @@ const Villas = () => {
           margin: 0 auto 20px;
         }
 
-        .amenity-icon {
+        .feature-icon {
           color: white;
           width: 30px;
           height: 30px;
         }
 
-        .amenity-card h4 {
+        .feature-card h4 {
           font-size: 1.3rem;
-          color: #1e3c72;
+          color: #1e40af;
           margin-bottom: 15px;
           font-weight: 600;
         }
 
-        .amenity-card p {
+        .feature-card p {
           color: #666;
           line-height: 1.6;
         }
 
-        .location-section {
-          padding: 100px 0;
-        }
-
-        .location-content {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 60px;
-          align-items: center;
-        }
-
-        .location-text h2 {
-          font-size: 2.5rem;
-          color: #1e3c72;
-          margin-bottom: 30px;
-          font-weight: 700;
-        }
-
-        .location-text p {
-          color: #666;
-          line-height: 1.8;
-          margin-bottom: 30px;
-          font-size: 1.1rem;
-        }
-
-        .location-features {
-          margin-bottom: 30px;
-        }
-
-        .location-item {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          margin-bottom: 15px;
-          color: #333;
-        }
-
-        .location-icon {
-          color: #ff6b35;
-          width: 20px;
-          height: 20px;
-        }
-
-        .location-btn {
-          background: #1e3c72;
-          color: white;
-          padding: 12px 30px;
-          border-radius: 6px;
-          text-decoration: none;
-          font-weight: 600;
-          display: inline-block;
-          transition: all 0.3s ease;
-        }
-
-        .location-btn:hover {
-          background: #2a5298;
-          transform: translateY(-2px);
-        }
-
-        .image-placeholder {
-          width: 100%;
-          height: 400px;
-          background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-          border-radius: 12px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.2rem;
-          font-weight: 600;
-          color: #666;
-          border: 2px dashed #dee2e6;
-        }
-
         @media (max-width: 768px) {
+          .services-grid {
+            grid-template-columns: 1fr;
+          }
+          
           .hero-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
           }
           
-          .hero-buttons {
-            flex-direction: column;
-            align-items: center;
-          }
-          
-          .villa-types-grid {
-            grid-template-columns: 1fr;
-          }
-          
-          .location-content {
-            grid-template-columns: 1fr;
-          }
-          
-          .villa-header {
+          .service-header {
             flex-direction: column;
             text-align: center;
+          }
+
+          .hero-stats {
+            flex-direction: column;
+            gap: 20px;
           }
         }
       `}</style>

@@ -213,7 +213,7 @@ const WeddingHires = () => {
         }
 
         .hero-section {
-          background: linear-gradient(135deg, #d946ef 0%, #c026d3 100%);
+          background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
           color: white;
           padding: 120px 0 80px;
           text-align: center;
@@ -226,13 +226,13 @@ const WeddingHires = () => {
         }
 
         .hero-content h1 {
-          font-size: 3.5rem;
+          font-size: 3rem;
           font-weight: 700;
           margin-bottom: 20px;
         }
 
         .hero-content p {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
           opacity: 0.9;
           margin-bottom: 40px;
           max-width: 600px;
@@ -259,12 +259,12 @@ const WeddingHires = () => {
         }
 
         .cta-button.primary {
-          background: white;
-          color: #d946ef;
+          background: #dc2626;
+          color: white;
         }
 
         .cta-button.primary:hover {
-          background: #f8f9fa;
+          background: #b91c1c;
           transform: translateY(-2px);
         }
 
@@ -276,11 +276,11 @@ const WeddingHires = () => {
 
         .cta-button.secondary:hover {
           background: white;
-          color: #d946ef;
+          color: #1e40af;
         }
 
         .stats-section {
-          background: #f8f9fa;
+          background: #f1f5f9;
           padding: 60px 0;
         }
 
@@ -298,7 +298,7 @@ const WeddingHires = () => {
         .stat-number {
           font-size: 3rem;
           font-weight: 700;
-          color: #d946ef;
+          color: #1e40af;
           margin-bottom: 10px;
         }
 
@@ -318,8 +318,8 @@ const WeddingHires = () => {
         }
 
         .section-header h2 {
-          font-size: 2.8rem;
-          color: #1e3c72;
+          font-size: 2.5rem;
+          color: #1e40af;
           margin-bottom: 20px;
           font-weight: 700;
         }
@@ -342,7 +342,7 @@ const WeddingHires = () => {
           padding: 30px;
           border-radius: 12px;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-          border: 1px solid #f0f0f0;
+          border: 1px solid #e5e7eb;
           transition: all 0.3s ease;
         }
 
@@ -361,7 +361,7 @@ const WeddingHires = () => {
         .service-icon-wrapper {
           width: 60px;
           height: 60px;
-          background: linear-gradient(135deg, #d946ef, #c026d3);
+          background: linear-gradient(135deg, #dc2626, #ef4444);
           border-radius: 12px;
           display: flex;
           align-items: center;
@@ -376,7 +376,7 @@ const WeddingHires = () => {
 
         .service-header h3 {
           font-size: 1.4rem;
-          color: #1e3c72;
+          color: #1e40af;
           font-weight: 600;
           margin: 0;
         }
@@ -408,7 +408,7 @@ const WeddingHires = () => {
         }
 
         .packages-section {
-          background: #f8f9fa;
+          background: #f1f5f9;
           padding: 100px 0;
         }
 
@@ -426,6 +426,7 @@ const WeddingHires = () => {
           text-align: center;
           transition: all 0.3s ease;
           position: relative;
+          border: 1px solid #e5e7eb;
         }
 
         .package-card:hover {
@@ -434,7 +435,7 @@ const WeddingHires = () => {
         }
 
         .package-card.featured {
-          border: 2px solid #d946ef;
+          border: 2px solid #1e40af;
           transform: scale(1.05);
         }
 
@@ -443,7 +444,7 @@ const WeddingHires = () => {
           top: -10px;
           left: 50%;
           transform: translateX(-50%);
-          background: #d946ef;
+          background: #dc2626;
           color: white;
           padding: 5px 20px;
           border-radius: 20px;
@@ -457,7 +458,7 @@ const WeddingHires = () => {
 
         .package-header h3 {
           font-size: 1.5rem;
-          color: #1e3c72;
+          color: #1e40af;
           margin-bottom: 15px;
           font-weight: 600;
         }
@@ -472,7 +473,7 @@ const WeddingHires = () => {
         .amount {
           font-size: 2.5rem;
           font-weight: 700;
-          color: #d946ef;
+          color: #dc2626;
         }
 
         .duration {
@@ -500,7 +501,7 @@ const WeddingHires = () => {
         }
 
         .package-btn {
-          background: #d946ef;
+          background: #1e40af;
           color: white;
           padding: 12px 30px;
           border-radius: 6px;
@@ -512,7 +513,7 @@ const WeddingHires = () => {
         }
 
         .package-btn:hover {
-          background: #c026d3;
+          background: #1d4ed8;
           transform: translateY(-2px);
         }
 
@@ -536,7 +537,7 @@ const WeddingHires = () => {
         .step-number {
           width: 60px;
           height: 60px;
-          background: linear-gradient(135deg, #d946ef, #c026d3);
+          background: linear-gradient(135deg, #dc2626, #ef4444);
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -549,7 +550,7 @@ const WeddingHires = () => {
 
         .step-content h4 {
           font-size: 1.3rem;
-          color: #1e3c72;
+          color: #1e40af;
           margin-bottom: 15px;
           font-weight: 600;
         }
@@ -561,7 +562,7 @@ const WeddingHires = () => {
 
         @media (max-width: 768px) {
           .hero-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
           }
           
           .hero-buttons {

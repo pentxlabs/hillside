@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const ContactUs = () => {
-  const [contactMethodsRef, contactMethodsVisible] = useScrollAnimation();
-  const [formRef, formVisible] = useScrollAnimation();
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,28 +32,28 @@ const ContactUs = () => {
 
   const contactMethods = [
     {
-      icon: <Phone className="contact-icon" />,
+      icon: Phone,
       title: "Call Us",
       info: "+1 (555) 123-4567",
       subInfo: "Mon-Fri: 9AM-6PM",
       action: "tel:+15551234567"
     },
     {
-      icon: <Mail className="contact-icon" />,
+      icon: Mail,
       title: "Email Us",
       info: "info@hillside.com",
       subInfo: "We reply within 24 hours",
       action: "mailto:info@hillside.com"
     },
     {
-      icon: <MapPin className="contact-icon" />,
+      icon: MapPin,
       title: "Visit Us",
       info: "123 HillSide Avenue",
       subInfo: "City, State 12345",
       action: "#"
     },
     {
-      icon: <MessageCircle className="contact-icon" />,
+      icon: MessageCircle,
       title: "Live Chat",
       info: "Available 24/7",
       subInfo: "Instant support",
@@ -66,444 +62,633 @@ const ContactUs = () => {
   ];
 
   return (
-    <div className="contact-us">
+    <div style={{
+      minHeight: '100vh',
+      fontFamily: 'Georgia, "Times New Roman", serif',
+      backgroundColor: '#fdfcfb',
+      color: '#3a3a3a'
+    }}>
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="container">
-          <div className="hero-content animate-fadeInDown">
-            <h1>Contact HillSide</h1>
-            <p className="delay-200">Get in touch with us for inquiries, bookings, and exceptional service</p>
-          </div>
+      <section style={{
+        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)',
+        padding: '100px 24px 80px',
+        textAlign: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+        borderBottom: '3px solid #c9a962'
+      }}>
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: 'linear-gradient(45deg, rgba(201, 169, 98, 0.03) 25%, transparent 25%, transparent 75%, rgba(201, 169, 98, 0.03) 75%, rgba(201, 169, 98, 0.03)), linear-gradient(45deg, rgba(201, 169, 98, 0.03) 25%, transparent 25%, transparent 75%, rgba(201, 169, 98, 0.03) 75%, rgba(201, 169, 98, 0.03))',
+          backgroundSize: '60px 60px',
+          backgroundPosition: '0 0, 30px 30px',
+          opacity: 0.4,
+          pointerEvents: 'none'
+        }}></div>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <h1 style={{
+            fontSize: '3.5rem',
+            fontWeight: '400',
+            marginBottom: '20px',
+            letterSpacing: '0.05em',
+            color: '#c9a962',
+            textShadow: '0 2px 20px rgba(201, 169, 98, 0.3)',
+            fontFamily: 'Georgia, "Times New Roman", serif'
+          }}>
+            HILLSIDE
+          </h1>
+          <p style={{
+            fontSize: '1.125rem',
+            color: '#e8e8e8',
+            maxWidth: '600px',
+            margin: '0 auto',
+            lineHeight: '1.8',
+            fontWeight: '300',
+            letterSpacing: '0.02em'
+          }}>
+            Premier destination for luxury weddings, villas, and exclusive experiences
+          </p>
         </div>
       </section>
 
       {/* Contact Methods */}
-      <section className="contact-methods-section" ref={contactMethodsRef}>
-        <div className="container">
-          <div className={`contact-methods-grid ${contactMethodsVisible ? 'scroll-stagger-children scroll-animate-visible' : 'scroll-stagger-children'}`}>
-            {contactMethods.map((method, index) => (
-              <a key={index} href={method.action} className="contact-method-card hover-lift">
-                <div className="contact-method-icon">
-                  {method.icon}
-                </div>
-                <h3>{method.title}</h3>
-                <p className="method-info">{method.info}</p>
-                <p className="method-subinfo">{method.subInfo}</p>
-              </a>
-            ))}
+      <section style={{
+        padding: '90px 24px',
+        backgroundColor: '#ffffff'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: '32px'
+          }}>
+            {contactMethods.map((method, index) => {
+              const IconComponent = method.icon;
+              return (
+                <a
+                  key={index}
+                  href={method.action}
+                  style={{
+                    backgroundColor: '#fdfcfb',
+                    padding: '48px 32px',
+                    borderRadius: '4px',
+                    textAlign: 'center',
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    border: '1px solid #e8e4dc',
+                    transition: 'all 0.4s ease',
+                    cursor: 'pointer',
+                    display: 'block',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.boxShadow = '0 12px 32px rgba(201, 169, 98, 0.15)';
+                    e.currentTarget.style.borderColor = '#c9a962';
+                    e.currentTarget.style.backgroundColor = '#ffffff';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.04)';
+                    e.currentTarget.style.borderColor = '#e8e4dc';
+                    e.currentTarget.style.backgroundColor = '#fdfcfb';
+                  }}
+                >
+                  <div style={{
+                    width: '64px',
+                    height: '64px',
+                    backgroundColor: '#1a1a2e',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 28px',
+                    border: '2px solid #c9a962'
+                  }}>
+                    <IconComponent size={28} color="#c9a962" strokeWidth={2} />
+                  </div>
+                  <h3 style={{
+                    fontSize: '1.125rem',
+                    color: '#1a1a2e',
+                    marginBottom: '12px',
+                    fontWeight: '600',
+                    letterSpacing: '0.03em',
+                    textTransform: 'uppercase',
+                    fontFamily: 'Georgia, "Times New Roman", serif'
+                  }}>
+                    {method.title}
+                  </h3>
+                  <p style={{
+                    color: '#3a3a3a',
+                    fontWeight: '400',
+                    marginBottom: '6px',
+                    fontSize: '1rem',
+                    fontFamily: 'Georgia, "Times New Roman", serif'
+                  }}>
+                    {method.info}
+                  </p>
+                  <p style={{
+                    color: '#8a8a8a',
+                    fontSize: '0.875rem',
+                    fontStyle: 'italic'
+                  }}>
+                    {method.subInfo}
+                  </p>
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Contact Form & Info */}
-      <section className="contact-form-section" ref={formRef}>
-        <div className="container">
-          <div className="contact-content">
-            <div className={`contact-info ${formVisible ? 'scroll-fade-left scroll-animate-visible' : 'scroll-fade-left'}`}>
-              <h2>Let's Start a Conversation</h2>
-              <p>
-                We're here to help you with all your needs. Whether you're planning a wedding, 
-                looking for luxury accommodations, or interested in our entertainment facilities, 
-                our team is ready to assist you.
+      <section style={{
+        padding: '90px 24px',
+        backgroundColor: '#fdfcfb'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: window.innerWidth > 1024 ? '1fr 1.2fr' : '1fr',
+            gap: '80px',
+            alignItems: 'start'
+          }}>
+            {/* Contact Info */}
+            <div>
+              <h2 style={{
+                fontSize: '2.75rem',
+                color: '#1a1a2e',
+                marginBottom: '24px',
+                fontWeight: '400',
+                letterSpacing: '0.03em',
+                lineHeight: '1.2',
+                fontFamily: 'Georgia, "Times New Roman", serif'
+              }}>
+                Connect With Excellence
+              </h2>
+              <p style={{
+                color: '#5a5a5a',
+                lineHeight: '1.9',
+                marginBottom: '56px',
+                fontSize: '1.0625rem',
+                fontFamily: 'Georgia, "Times New Roman", serif'
+              }}>
+                Experience the pinnacle of luxury and service. Whether planning an elegant wedding, seeking premium villas, or exploring exclusive amenities, our distinguished team awaits to craft your perfect experience.
               </p>
               
-              <div className="contact-details">
-                <div className="detail-item">
-                  <Clock className="detail-icon" />
+              <div style={{ marginBottom: '56px' }}>
+                <div style={{
+                  display: 'flex',
+                  gap: '24px',
+                  marginBottom: '40px'
+                }}>
+                  <div style={{
+                    width: '52px',
+                    height: '52px',
+                    backgroundColor: '#1a1a2e',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    border: '2px solid #c9a962'
+                  }}>
+                    <Clock size={24} color="#c9a962" strokeWidth={2} />
+                  </div>
                   <div>
-                    <h4>Business Hours</h4>
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p>Saturday - Sunday: 10:00 AM - 4:00 PM</p>
+                    <h4 style={{
+                      color: '#1a1a2e',
+                      fontSize: '1.0625rem',
+                      marginBottom: '12px',
+                      fontWeight: '600',
+                      letterSpacing: '0.02em',
+                      textTransform: 'uppercase',
+                      fontFamily: 'Georgia, "Times New Roman", serif'
+                    }}>
+                      Hours of Operation
+                    </h4>
+                    <p style={{ color: '#6a6a6a', marginBottom: '6px', fontSize: '0.9375rem', lineHeight: '1.7' }}>
+                      Monday - Friday: 9:00 AM - 6:00 PM
+                    </p>
+                    <p style={{ color: '#6a6a6a', fontSize: '0.9375rem', lineHeight: '1.7' }}>
+                      Saturday - Sunday: 10:00 AM - 4:00 PM
+                    </p>
                   </div>
                 </div>
                 
-                <div className="detail-item">
-                  <MapPin className="detail-icon" />
+                <div style={{
+                  display: 'flex',
+                  gap: '24px'
+                }}>
+                  <div style={{
+                    width: '52px',
+                    height: '52px',
+                    backgroundColor: '#1a1a2e',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    border: '2px solid #c9a962'
+                  }}>
+                    <MapPin size={24} color="#c9a962" strokeWidth={2} />
+                  </div>
                   <div>
-                    <h4>Our Location</h4>
-                    <p>123 HillSide Avenue</p>
-                    <p>City, State 12345</p>
+                    <h4 style={{
+                      color: '#1a1a2e',
+                      fontSize: '1.0625rem',
+                      marginBottom: '12px',
+                      fontWeight: '600',
+                      letterSpacing: '0.02em',
+                      textTransform: 'uppercase',
+                      fontFamily: 'Georgia, "Times New Roman", serif'
+                    }}>
+                      Our Address
+                    </h4>
+                    <p style={{ color: '#6a6a6a', marginBottom: '6px', fontSize: '0.9375rem', lineHeight: '1.7' }}>
+                      123 HillSide Avenue
+                    </p>
+                    <p style={{ color: '#6a6a6a', fontSize: '0.9375rem', lineHeight: '1.7' }}>
+                      City, State 12345
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="response-time">
-                <h4>Response Time</h4>
-                <ul>
-                  <li>Email inquiries: Within 24 hours</li>
-                  <li>Phone calls: Immediate during business hours</li>
-                  <li>Emergency support: Available 24/7</li>
+              <div style={{
+                backgroundColor: '#ffffff',
+                border: '1px solid #c9a962',
+                borderRadius: '4px',
+                padding: '36px',
+                boxShadow: '0 4px 16px rgba(201, 169, 98, 0.08)'
+              }}>
+                <h4 style={{
+                  color: '#1a1a2e',
+                  fontSize: '1.0625rem',
+                  marginBottom: '24px',
+                  fontWeight: '600',
+                  letterSpacing: '0.03em',
+                  textTransform: 'uppercase',
+                  fontFamily: 'Georgia, "Times New Roman", serif'
+                }}>
+                  Service Commitment
+                </h4>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {[
+                    'Email inquiries: 24-hour response guarantee',
+                    'Telephone: Immediate personal attention',
+                    'Concierge: Round-the-clock availability'
+                  ].map((item, idx) => (
+                    <li key={idx} style={{
+                      color: '#5a5a5a',
+                      marginBottom: idx < 2 ? '16px' : '0',
+                      paddingLeft: '28px',
+                      position: 'relative',
+                      fontSize: '0.9375rem',
+                      lineHeight: '1.7',
+                      fontFamily: 'Georgia, "Times New Roman", serif'
+                    }}>
+                      <span style={{
+                        position: 'absolute',
+                        left: 0,
+                        color: '#c9a962',
+                        fontWeight: '700',
+                        fontSize: '1.125rem'
+                      }}>◆</span>
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
             
-            <div className={`contact-form-container ${formVisible ? 'scroll-fade-right scroll-animate-visible' : 'scroll-fade-right'}`}>
-              <form onSubmit={handleSubmit} className="contact-form">
-                <h3>Send Us a Message</h3>
-                
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="name">Full Name *</label>
+            {/* Contact Form */}
+            <div style={{
+              backgroundColor: '#ffffff',
+              padding: '56px',
+              borderRadius: '4px',
+              border: '1px solid #e8e4dc',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.06)'
+            }}>
+              <h3 style={{
+                fontSize: '2rem',
+                color: '#1a1a2e',
+                marginBottom: '16px',
+                fontWeight: '400',
+                letterSpacing: '0.03em',
+                fontFamily: 'Georgia, "Times New Roman", serif'
+              }}>
+                Inquire Today
+              </h3>
+              <p style={{
+                color: '#8a8a8a',
+                marginBottom: '40px',
+                fontSize: '0.9375rem',
+                fontStyle: 'italic'
+              }}>
+                Complete the form and receive our prompt, personalized response
+              </p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr',
+                  gap: '24px'
+                }}>
+                  <div>
+                    <label style={{
+                      display: 'block',
+                      marginBottom: '10px',
+                      color: '#3a3a3a',
+                      fontWeight: '500',
+                      fontSize: '0.875rem',
+                      letterSpacing: '0.02em',
+                      textTransform: 'uppercase',
+                      fontFamily: 'Georgia, "Times New Roman", serif'
+                    }}>
+                      Full Name
+                    </label>
                     <input
                       type="text"
-                      id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      placeholder="Enter your full name"
+                      placeholder="Enter your name"
+                      style={{
+                        width: '100%',
+                        padding: '14px 18px',
+                        border: '1px solid #d8d4cc',
+                        borderRadius: '2px',
+                        fontSize: '0.9375rem',
+                        transition: 'all 0.3s ease',
+                        fontFamily: 'Georgia, "Times New Roman", serif',
+                        color: '#3a3a3a',
+                        backgroundColor: '#fdfcfb',
+                        outline: 'none',
+                        boxSizing: 'border-box'
+                      }}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = '#c9a962';
+                        e.target.style.backgroundColor = '#ffffff';
+                        e.target.style.boxShadow = '0 0 0 2px rgba(201, 169, 98, 0.1)';
+                      }}
+                      onBlur={(e) => {
+                        e.target.style.borderColor = '#d8d4cc';
+                        e.target.style.backgroundColor = '#fdfcfb';
+                        e.target.style.boxShadow = 'none';
+                      }}
                     />
                   </div>
                   
-                  <div className="form-group">
-                    <label htmlFor="email">Email Address *</label>
+                  <div>
+                    <label style={{
+                      display: 'block',
+                      marginBottom: '10px',
+                      color: '#3a3a3a',
+                      fontWeight: '500',
+                      fontSize: '0.875rem',
+                      letterSpacing: '0.02em',
+                      textTransform: 'uppercase',
+                      fontFamily: 'Georgia, "Times New Roman", serif'
+                    }}>
+                      Email Address
+                    </label>
                     <input
                       type="email"
-                      id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
                       required
                       placeholder="Enter your email"
+                      style={{
+                        width: '100%',
+                        padding: '14px 18px',
+                        border: '1px solid #d8d4cc',
+                        borderRadius: '2px',
+                        fontSize: '0.9375rem',
+                        transition: 'all 0.3s ease',
+                        fontFamily: 'Georgia, "Times New Roman", serif',
+                        color: '#3a3a3a',
+                        backgroundColor: '#fdfcfb',
+                        outline: 'none',
+                        boxSizing: 'border-box'
+                      }}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = '#c9a962';
+                        e.target.style.backgroundColor = '#ffffff';
+                        e.target.style.boxShadow = '0 0 0 2px rgba(201, 169, 98, 0.1)';
+                      }}
+                      onBlur={(e) => {
+                        e.target.style.borderColor = '#d8d4cc';
+                        e.target.style.backgroundColor = '#fdfcfb';
+                        e.target.style.boxShadow = 'none';
+                      }}
                     />
                   </div>
                 </div>
                 
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone Number</label>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: window.innerWidth > 768 ? '1fr 1fr' : '1fr',
+                  gap: '24px'
+                }}>
+                  <div>
+                    <label style={{
+                      display: 'block',
+                      marginBottom: '10px',
+                      color: '#3a3a3a',
+                      fontWeight: '500',
+                      fontSize: '0.875rem',
+                      letterSpacing: '0.02em',
+                      textTransform: 'uppercase',
+                      fontFamily: 'Georgia, "Times New Roman", serif'
+                    }}>
+                      Phone Number
+                    </label>
                     <input
                       type="tel"
-                      id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="Enter your phone number"
+                      placeholder="Enter your phone"
+                      style={{
+                        width: '100%',
+                        padding: '14px 18px',
+                        border: '1px solid #d8d4cc',
+                        borderRadius: '2px',
+                        fontSize: '0.9375rem',
+                        transition: 'all 0.3s ease',
+                        fontFamily: 'Georgia, "Times New Roman", serif',
+                        color: '#3a3a3a',
+                        backgroundColor: '#fdfcfb',
+                        outline: 'none',
+                        boxSizing: 'border-box'
+                      }}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = '#c9a962';
+                        e.target.style.backgroundColor = '#ffffff';
+                        e.target.style.boxShadow = '0 0 0 2px rgba(201, 169, 98, 0.1)';
+                      }}
+                      onBlur={(e) => {
+                        e.target.style.borderColor = '#d8d4cc';
+                        e.target.style.backgroundColor = '#fdfcfb';
+                        e.target.style.boxShadow = 'none';
+                      }}
                     />
                   </div>
                   
-                  <div className="form-group">
-                    <label htmlFor="service">Service Interest</label>
+                  <div>
+                    <label style={{
+                      display: 'block',
+                      marginBottom: '10px',
+                      color: '#3a3a3a',
+                      fontWeight: '500',
+                      fontSize: '0.875rem',
+                      letterSpacing: '0.02em',
+                      textTransform: 'uppercase',
+                      fontFamily: 'Georgia, "Times New Roman", serif'
+                    }}>
+                      Service of Interest
+                    </label>
                     <select
-                      id="service"
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
+                      style={{
+                        width: '100%',
+                        padding: '14px 18px',
+                        border: '1px solid #d8d4cc',
+                        borderRadius: '2px',
+                        fontSize: '0.9375rem',
+                        transition: 'all 0.3s ease',
+                        fontFamily: 'Georgia, "Times New Roman", serif',
+                        color: '#3a3a3a',
+                        backgroundColor: '#fdfcfb',
+                        outline: 'none',
+                        cursor: 'pointer',
+                        boxSizing: 'border-box'
+                      }}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = '#c9a962';
+                        e.target.style.backgroundColor = '#ffffff';
+                        e.target.style.boxShadow = '0 0 0 2px rgba(201, 169, 98, 0.1)';
+                      }}
+                      onBlur={(e) => {
+                        e.target.style.borderColor = '#d8d4cc';
+                        e.target.style.backgroundColor = '#fdfcfb';
+                        e.target.style.boxShadow = 'none';
+                      }}
                     >
                       <option value="">Select a service</option>
-                      <option value="wedding">Wedding Services</option>
-                      <option value="villas">Luxury Villas</option>
-                      <option value="funcity">Fun City</option>
-                      <option value="residencies">Residencies</option>
-                      <option value="other">Other</option>
+                      <option value="wedding">Luxury Weddings & Events</option>
+                      <option value="villas">Premium Villa Rentals</option>
+                      <option value="funcity">Family Entertainment</option>
+                      <option value="residencies">Exclusive Residencies</option>
+                      <option value="other">General Inquiry</option>
                     </select>
                   </div>
                 </div>
                 
-                <div className="form-group">
-                  <label htmlFor="message">Message *</label>
+                <div>
+                  <label style={{
+                    display: 'block',
+                    marginBottom: '10px',
+                    color: '#3a3a3a',
+                    fontWeight: '500',
+                    fontSize: '0.875rem',
+                    letterSpacing: '0.02em',
+                    textTransform: 'uppercase',
+                    fontFamily: 'Georgia, "Times New Roman", serif'
+                  }}>
+                    Your Message
+                  </label>
                   <textarea
-                    id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows="6"
+                    rows="5"
                     required
-                    placeholder="Tell us about your requirements or questions..."
-                  ></textarea>
+                    placeholder="Share your requirements and preferences..."
+                    style={{
+                      width: '100%',
+                      padding: '14px 18px',
+                      border: '1px solid #d8d4cc',
+                      borderRadius: '2px',
+                      fontSize: '0.9375rem',
+                      transition: 'all 0.3s ease',
+                      fontFamily: 'Georgia, "Times New Roman", serif',
+                      color: '#3a3a3a',
+                      backgroundColor: '#fdfcfb',
+                      resize: 'vertical',
+                      minHeight: '140px',
+                      outline: 'none',
+                      lineHeight: '1.7',
+                      boxSizing: 'border-box'
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = '#c9a962';
+                      e.target.style.backgroundColor = '#ffffff';
+                      e.target.style.boxShadow = '0 0 0 2px rgba(201, 169, 98, 0.1)';
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = '#d8d4cc';
+                      e.target.style.backgroundColor = '#fdfcfb';
+                      e.target.style.boxShadow = 'none';
+                    }}
+                  />
                 </div>
                 
-                <button type="submit" className="submit-btn">
-                  <Send size={20} />
-                  Send Message
+                <button 
+                  onClick={handleSubmit}
+                  style={{
+                    backgroundColor: '#1a1a2e',
+                    color: '#c9a962',
+                    padding: '18px 40px',
+                    border: '2px solid #c9a962',
+                    borderRadius: '2px',
+                    fontSize: '0.9375rem',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    justifyContent: 'center',
+                    transition: 'all 0.3s ease',
+                    width: '100%',
+                    marginTop: '12px',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    fontFamily: 'Georgia, "Times New Roman", serif'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#c9a962';
+                    e.currentTarget.style.color = '#1a1a2e';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(201, 169, 98, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#1a1a2e';
+                    e.currentTarget.style.color = '#c9a962';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                  onMouseDown={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <Send size={18} strokeWidth={2.5} />
+                  Submit Inquiry
                 </button>
-              </form>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-      <style jsx>{`
-        .contact-us {
-          min-height: 100vh;
-        }
-
-        .hero-section {
-          background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-          color: white;
-          padding: 120px 0 80px;
-          text-align: center;
-        }
-
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
-        }
-
-        .hero-content h1 {
-          font-size: 3.5rem;
-          font-weight: 700;
-          margin-bottom: 20px;
-        }
-
-        .hero-content p {
-          font-size: 1.3rem;
-          opacity: 0.9;
-          max-width: 600px;
-          margin: 0 auto;
-        }
-
-        .contact-methods-section {
-          padding: 80px 0;
-          background: #f1f5f9;
-        }
-
-        .contact-methods-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 30px;
-        }
-
-        .contact-method-card {
-          background: white;
-          padding: 30px;
-          border-radius: 12px;
-          text-align: center;
-          text-decoration: none;
-          color: inherit;
-          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-          transition: all 0.3s ease;
-        }
-
-        .contact-method-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .contact-method-icon {
-          width: 60px;
-          height: 60px;
-          background: linear-gradient(135deg, #dc2626, #ef4444);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 auto 20px;
-        }
-
-        .contact-icon {
-          color: white;
-          width: 30px;
-          height: 30px;
-        }
-
-        .contact-method-card h3 {
-          font-size: 1.3rem;
-          color: #1e40af;
-          margin-bottom: 10px;
-          font-weight: 600;
-        }
-
-        .method-info {
-          color: #333;
-          font-weight: 600;
-          margin-bottom: 5px;
-          font-size: 1.1rem;
-        }
-
-        .method-subinfo {
-          color: #666;
-          font-size: 0.95rem;
-        }
-
-        .contact-form-section {
-          padding: 100px 0;
-        }
-
-        .contact-content {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 60px;
-          align-items: start;
-        }
-
-        .contact-info h2 {
-          font-size: 2.5rem;
-          color: #1e40af;
-          margin-bottom: 30px;
-          font-weight: 700;
-        }
-
-        .contact-info > p {
-          color: #666;
-          line-height: 1.8;
-          margin-bottom: 40px;
-          font-size: 1.1rem;
-        }
-
-        .contact-details {
-          margin-bottom: 40px;
-        }
-
-        .detail-item {
-          display: flex;
-          gap: 20px;
-          margin-bottom: 30px;
-        }
-
-        .detail-icon {
-          color: #dc2626;
-          width: 24px;
-          height: 24px;
-          margin-top: 5px;
-          flex-shrink: 0;
-        }
-
-        .detail-item h4 {
-          color: #1e40af;
-          font-size: 1.2rem;
-          margin-bottom: 8px;
-          font-weight: 600;
-        }
-
-        .detail-item p {
-          color: #666;
-          margin-bottom: 3px;
-        }
-
-        .response-time h4 {
-          color: #1e40af;
-          font-size: 1.2rem;
-          margin-bottom: 15px;
-          font-weight: 600;
-        }
-
-        .response-time ul {
-          list-style: none;
-          padding: 0;
-        }
-
-        .response-time li {
-          color: #666;
-          margin-bottom: 8px;
-          padding-left: 20px;
-          position: relative;
-        }
-
-        .response-time li::before {
-          content: "✓";
-          position: absolute;
-          left: 0;
-          color: #22c55e;
-          font-weight: bold;
-        }
-
-        .contact-form-container {
-          background: white;
-          padding: 40px;
-          border-radius: 12px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-          border: 1px solid #f0f0f0;
-        }
-
-        .contact-form h3 {
-          font-size: 1.8rem;
-          color: #1e40af;
-          margin-bottom: 30px;
-          font-weight: 600;
-        }
-
-        .form-row {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 20px;
-        }
-
-        .form-group {
-          margin-bottom: 25px;
-        }
-
-        .form-group label {
-          display: block;
-          margin-bottom: 8px;
-          color: #333;
-          font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-          width: 100%;
-          padding: 12px 15px;
-          border: 2px solid #e5e7eb;
-          border-radius: 8px;
-          font-size: 1rem;
-          transition: border-color 0.3s ease;
-          font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-          outline: none;
-          border-color: #dc2626;
-        }
-
-        .form-group textarea {
-          resize: vertical;
-          min-height: 120px;
-        }
-
-        .submit-btn {
-          background: linear-gradient(135deg, #1e40af, #3b82f6);
-          color: white;
-          padding: 15px 30px;
-          border: none;
-          border-radius: 8px;
-          font-size: 1.1rem;
-          font-weight: 600;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          justify-content: center;
-          transition: all 0.3s ease;
-          width: 100%;
-        }
-
-        .submit-btn:hover {
-          background: linear-gradient(135deg, #1d4ed8, #2563eb);
-          transform: translateY(-2px);
-          box-shadow: 0 10px 20px rgba(30, 64, 175, 0.3);
-        }
-
-        @media (max-width: 768px) {
-          .hero-content h1 {
-            font-size: 2.5rem;
-          }
-          
-          .contact-content {
-            grid-template-columns: 1fr;
-            gap: 40px;
-          }
-          
-          .form-row {
-            grid-template-columns: 1fr;
-          }
-          
-          .contact-methods-grid {
-            grid-template-columns: 1fr;
-          }
-          
-          .detail-item {
-            flex-direction: column;
-            gap: 10px;
-          }
-        }
-      `}</style>
     </div>
   );
 };

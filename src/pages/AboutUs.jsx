@@ -168,13 +168,13 @@ const AboutUs = () => {
         }
 
         .hero-content h1 {
-          font-size: 3.5rem;
+          font-size: 3rem;
           font-weight: 700;
           margin-bottom: 20px;
         }
 
         .hero-content p {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
           opacity: 0.9;
         }
 
@@ -233,7 +233,14 @@ const AboutUs = () => {
           padding: 40px;
           border-radius: 12px;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          border: 1px solid #e5e7eb;
           text-align: center;
+          transition: all 0.3s ease;
+        }
+
+        .mission-card:hover, .vision-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .mv-icon {
@@ -266,7 +273,7 @@ const AboutUs = () => {
         }
 
         .section-header h2 {
-          font-size: 2.8rem;
+          font-size: 2.5rem;
           color: #1e40af;
           margin-bottom: 20px;
           font-weight: 700;
@@ -286,6 +293,16 @@ const AboutUs = () => {
         .value-card {
           text-align: center;
           padding: 30px 20px;
+          background: white;
+          border-radius: 12px;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+          border: 1px solid #e5e7eb;
+          transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
         }
 
         .value-icon-wrapper {
@@ -358,11 +375,15 @@ const AboutUs = () => {
           }
           
           .hero-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
           }
           
           .achievements-grid {
             grid-template-columns: repeat(2, 1fr);
+          }
+
+          .section-header h2 {
+            font-size: 2rem;
           }
         }
       `}</style>

@@ -28,21 +28,21 @@ const Header = () => {
           <Car size={32} />
           <span>Hill Side</span>
         </div>
-        
-        <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-          <Link to="/" onClick={handleLinkClick} className={location.pathname === '/' ? 'active' : ''}>Home</Link>
-          <Link to="/service" onClick={handleLinkClick} className={location.pathname === '/service' ? 'active' : ''}>Service</Link>
-          <Link to="/funcity" onClick={handleLinkClick} className={location.pathname === '/funcity' ? 'active' : ''}>Fun City</Link>
-          <Link to="/villas" onClick={handleLinkClick} className={location.pathname === '/villas' ? 'active' : ''}>Villas</Link>
-          <Link to="/wedding-hires" onClick={handleLinkClick} className={location.pathname === '/wedding-hires' ? 'active' : ''}>Wedding Hires</Link>
-          <Link to="/residencies" onClick={handleLinkClick} className={location.pathname === '/residencies' ? 'active' : ''}>Residencies</Link>
-          <Link to="/about" onClick={handleLinkClick} className={location.pathname === '/about' ? 'active' : ''}>About Us</Link>
-          <Link to="/contact" onClick={handleLinkClick} className={location.pathname === '/contact' ? 'active' : ''}>Contact Us</Link>
-        </nav>
-
-        <button className="menu-toggle" onClick={toggleMenu}>
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="nav-wrapper">
+          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+            <Link to="/" onClick={handleLinkClick} className={location.pathname === '/' ? 'active' : ''}>Home</Link>
+            <Link to="/service" onClick={handleLinkClick} className={location.pathname === '/service' ? 'active' : ''}>Service</Link>
+            <Link to="/funcity" onClick={handleLinkClick} className={location.pathname === '/funcity' ? 'active' : ''}>Fun City</Link>
+            <Link to="/villas" onClick={handleLinkClick} className={location.pathname === '/villas' ? 'active' : ''}>Villas</Link>
+            <Link to="/wedding-hires" onClick={handleLinkClick} className={location.pathname === '/wedding-hires' ? 'active' : ''}>Wedding Hires</Link>
+            <Link to="/residencies" onClick={handleLinkClick} className={location.pathname === '/residencies' ? 'active' : ''}>Residencies</Link>
+            <Link to="/about" onClick={handleLinkClick} className={location.pathname === '/about' ? 'active' : ''}>About Us</Link>
+            <Link to="/contact" onClick={handleLinkClick} className={location.pathname === '/contact' ? 'active' : ''}>Contact Us</Link>
+          </nav>
+          <button className="menu-toggle" onClick={toggleMenu}>
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
     </header>
   );

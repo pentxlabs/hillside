@@ -170,7 +170,7 @@ const FunCity = () => {
         }
 
         .hero-section {
-          background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+          background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
           color: white;
           padding: 120px 0 80px;
           text-align: center;
@@ -183,16 +183,16 @@ const FunCity = () => {
         }
 
         .hero-content h1 {
-          font-size: 3.5rem;
+          font-size: 3rem;
           font-weight: 700;
           margin-bottom: 20px;
         }
 
         .hero-content p {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
           opacity: 0.9;
           margin-bottom: 40px;
-          max-width: 600px;
+          max-width: 700px;
           margin-left: auto;
           margin-right: auto;
         }
@@ -216,12 +216,12 @@ const FunCity = () => {
         }
 
         .cta-button.primary {
-          background: white;
-          color: #ff6b35;
+          background: #dc2626;
+          color: white;
         }
 
         .cta-button.primary:hover {
-          background: #f8f9fa;
+          background: #b91c1c;
           transform: translateY(-2px);
         }
 
@@ -233,11 +233,11 @@ const FunCity = () => {
 
         .cta-button.secondary:hover {
           background: white;
-          color: #ff6b35;
+          color: #1e40af;
         }
 
         .quick-info-section {
-          background: #f8f9fa;
+          background: #f1f5f9;
           padding: 60px 0;
         }
 
@@ -255,13 +255,13 @@ const FunCity = () => {
         .info-icon {
           width: 40px;
           height: 40px;
-          color: #ff6b35;
+          color: #dc2626;
           margin-bottom: 15px;
         }
 
         .info-item h4 {
           font-size: 1.2rem;
-          color: #1e3c72;
+          color: #1e40af;
           margin-bottom: 10px;
           font-weight: 600;
         }
@@ -281,8 +281,8 @@ const FunCity = () => {
         }
 
         .section-header h2 {
-          font-size: 2.8rem;
-          color: #1e3c72;
+          font-size: 2.5rem;
+          color: #1e40af;
           margin-bottom: 20px;
           font-weight: 700;
         }
@@ -305,7 +305,7 @@ const FunCity = () => {
           padding: 40px;
           border-radius: 12px;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-          border: 1px solid #f0f0f0;
+          border: 1px solid #e5e7eb;
           transition: all 0.3s ease;
         }
 
@@ -324,7 +324,7 @@ const FunCity = () => {
         .attraction-icon-wrapper {
           width: 60px;
           height: 60px;
-          background: linear-gradient(135deg, #ff6b35, #f7931e);
+          background: linear-gradient(135deg, #dc2626, #ef4444);
           border-radius: 12px;
           display: flex;
           align-items: center;
@@ -339,7 +339,7 @@ const FunCity = () => {
 
         .attraction-header h3 {
           font-size: 1.5rem;
-          color: #1e3c72;
+          color: #1e40af;
           font-weight: 600;
           margin: 0;
         }
@@ -370,7 +370,7 @@ const FunCity = () => {
         }
 
         .packages-section {
-          background: #f8f9fa;
+          background: #f1f5f9;
           padding: 100px 0;
         }
 
@@ -385,6 +385,7 @@ const FunCity = () => {
           padding: 30px;
           border-radius: 12px;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          border: 1px solid #e5e7eb;
           text-align: center;
           transition: all 0.3s ease;
         }
@@ -400,7 +401,7 @@ const FunCity = () => {
 
         .package-header h3 {
           font-size: 1.5rem;
-          color: #1e3c72;
+          color: #1e40af;
           margin-bottom: 15px;
           font-weight: 600;
         }
@@ -415,7 +416,7 @@ const FunCity = () => {
         .amount {
           font-size: 2.5rem;
           font-weight: 700;
-          color: #ff6b35;
+          color: #dc2626;
         }
 
         .duration {
@@ -443,7 +444,7 @@ const FunCity = () => {
         }
 
         .package-btn {
-          background: #ff6b35;
+          background: #1e40af;
           color: white;
           padding: 12px 30px;
           border-radius: 6px;
@@ -455,13 +456,13 @@ const FunCity = () => {
         }
 
         .package-btn:hover {
-          background: #e55a2b;
+          background: #1d4ed8;
           transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
           .hero-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
           }
           
           .hero-buttons {

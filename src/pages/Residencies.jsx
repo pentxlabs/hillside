@@ -242,7 +242,7 @@ const Residencies = () => {
         }
 
         .hero-section {
-          background: linear-gradient(135deg, #2d5016 0%, #3d6b1b 100%);
+          background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
           color: white;
           padding: 120px 0 80px;
           text-align: center;
@@ -255,13 +255,13 @@ const Residencies = () => {
         }
 
         .hero-content h1 {
-          font-size: 3.5rem;
+          font-size: 3rem;
           font-weight: 700;
           margin-bottom: 20px;
         }
 
         .hero-content p {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
           opacity: 0.9;
           margin-bottom: 40px;
           max-width: 600px;
@@ -288,12 +288,12 @@ const Residencies = () => {
         }
 
         .cta-button.primary {
-          background: #ff6b35;
+          background: #dc2626;
           color: white;
         }
 
         .cta-button.primary:hover {
-          background: #e55a2b;
+          background: #b91c1c;
           transform: translateY(-2px);
         }
 
@@ -305,11 +305,11 @@ const Residencies = () => {
 
         .cta-button.secondary:hover {
           background: white;
-          color: #2d5016;
+          color: #1e40af;
         }
 
         .stats-section {
-          background: #f8f9fa;
+          background: #f1f5f9;
           padding: 60px 0;
         }
 
@@ -327,7 +327,7 @@ const Residencies = () => {
         .stat-number {
           font-size: 3rem;
           font-weight: 700;
-          color: #2d5016;
+          color: #1e40af;
           margin-bottom: 10px;
         }
 
@@ -347,8 +347,8 @@ const Residencies = () => {
         }
 
         .section-header h2 {
-          font-size: 2.8rem;
-          color: #1e3c72;
+          font-size: 2.5rem;
+          color: #1e40af;
           margin-bottom: 20px;
           font-weight: 700;
         }
@@ -371,7 +371,7 @@ const Residencies = () => {
           padding: 30px;
           border-radius: 12px;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-          border: 1px solid #f0f0f0;
+          border: 1px solid #e5e7eb;
           transition: all 0.3s ease;
         }
 
@@ -390,7 +390,7 @@ const Residencies = () => {
         .property-icon-wrapper {
           width: 60px;
           height: 60px;
-          background: linear-gradient(135deg, #2d5016, #3d6b1b);
+          background: linear-gradient(135deg, #1e40af, #3b82f6);
           border-radius: 12px;
           display: flex;
           align-items: center;
@@ -405,13 +405,13 @@ const Residencies = () => {
 
         .property-info h3 {
           font-size: 1.5rem;
-          color: #1e3c72;
+          color: #1e40af;
           font-weight: 600;
           margin: 0 0 5px 0;
         }
 
         .price {
-          color: #2d5016;
+          color: #dc2626;
           font-weight: 600;
           font-size: 1.1rem;
         }
@@ -442,7 +442,7 @@ const Residencies = () => {
         }
 
         .property-btn {
-          background: #2d5016;
+          background: #1e40af;
           color: white;
           padding: 12px 30px;
           border-radius: 6px;
@@ -455,12 +455,12 @@ const Residencies = () => {
         }
 
         .property-btn:hover {
-          background: #3d6b1b;
+          background: #1d4ed8;
           transform: translateY(-2px);
         }
 
         .community-section {
-          background: #f8f9fa;
+          background: #f1f5f9;
           padding: 100px 0;
         }
 
@@ -481,7 +481,7 @@ const Residencies = () => {
         .feature-icon-wrapper {
           width: 60px;
           height: 60px;
-          background: linear-gradient(135deg, #ff6b35, #f7931e);
+          background: linear-gradient(135deg, #1e40af, #3b82f6);
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -497,7 +497,7 @@ const Residencies = () => {
 
         .community-card h4 {
           font-size: 1.3rem;
-          color: #1e3c72;
+          color: #1e40af;
           margin-bottom: 15px;
           font-weight: 600;
         }
@@ -522,7 +522,7 @@ const Residencies = () => {
           padding: 30px;
           border-radius: 12px;
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-          border: 1px solid #f0f0f0;
+          border: 1px solid #e5e7eb;
         }
 
         .neighborhood-header {
@@ -533,14 +533,14 @@ const Residencies = () => {
         }
 
         .neighborhood-icon {
-          color: #2d5016;
+          color: #dc2626;
           width: 24px;
           height: 24px;
         }
 
         .neighborhood-header h3 {
           font-size: 1.4rem;
-          color: #1e3c72;
+          color: #1e40af;
           font-weight: 600;
           margin: 0;
         }
@@ -571,7 +571,7 @@ const Residencies = () => {
         }
 
         .investment-section {
-          background: #f8f9fa;
+          background: #f1f5f9;
           padding: 100px 0;
         }
 
@@ -584,7 +584,7 @@ const Residencies = () => {
 
         .investment-text h2 {
           font-size: 2.5rem;
-          color: #1e3c72;
+          color: #1e40af;
           margin-bottom: 30px;
           font-weight: 700;
         }
@@ -609,13 +609,13 @@ const Residencies = () => {
         }
 
         .benefit-icon {
-          color: #2d5016;
+          color: #dc2626;
           width: 20px;
           height: 20px;
         }
 
         .investment-btn {
-          background: #2d5016;
+          background: #1e40af;
           color: white;
           padding: 12px 30px;
           border-radius: 6px;
@@ -626,7 +626,7 @@ const Residencies = () => {
         }
 
         .investment-btn:hover {
-          background: #3d6b1b;
+          background: #1d4ed8;
           transform: translateY(-2px);
         }
 
@@ -646,7 +646,7 @@ const Residencies = () => {
 
         @media (max-width: 768px) {
           .hero-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
           }
           
           .hero-buttons {
