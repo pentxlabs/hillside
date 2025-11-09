@@ -1,8 +1,8 @@
-﻿import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import './Header.css';
-
+/* eslint-disable unicode-bom */
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import "./Header.css";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -17,17 +17,17 @@ const Header = () => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
   const navigationLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/service', label: 'Service Station' },
-    { path: '/funcity', label: 'Fun City' },
-    { path: '/villas', label: 'Villas' },
-    { path: '/wedding-hires', label: 'Wedding Hires' },
-    { path: '/contact', label: 'Contact Us' }
+    { path: "/", label: "Home" },
+    { path: "/service", label: "Service Station" },
+    { path: "/funcity", label: "Fun City" },
+    { path: "/villas", label: "Villas" },
+    { path: "/wedding-hires", label: "Wedding Hires" },
+    { path: "/contact", label: "Contact Us" },
   ];
 
   return (
@@ -36,24 +36,24 @@ const Header = () => {
         <Link to="/" onClick={handleLinkClick} className="logo">
           <span className="logo-text">HillSide</span>
         </Link>
-        
-        <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+
+        <nav className={`nav ${isMenuOpen ? "nav-open" : ""}`}>
           {navigationLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               onClick={handleLinkClick}
-              className={location.pathname === link.path ? 'active' : ''}
+              className={location.pathname === link.path ? "active" : ""}
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <button 
-          className="menu-toggle" 
+        <button
+          className="menu-toggle"
           onClick={toggleMenu}
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
