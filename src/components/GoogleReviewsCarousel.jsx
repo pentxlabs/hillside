@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
-import { DUMMY_REVIEWS } from '../config/googleReviewsConfig';
-import './GoogleReviewsCarousel.css';
+import React, { useState, useEffect } from "react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { DUMMY_REVIEWS } from "../config/googleReviewsConfig";
+import "./GoogleReviewsCarousel.css";
 
 const GoogleReviewsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [reviews, setReviews] = useState(DUMMY_REVIEWS);
+  const reviews = DUMMY_REVIEWS;
 
   useEffect(() => {
     // TODO: Fetch actual Google Reviews when API is configured
@@ -26,7 +26,7 @@ const GoogleReviewsCarousel = () => {
 
   const formatDate = (timestamp) => {
     const date = new Date(timestamp * 1000);
-    return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
   };
 
   return (
@@ -38,8 +38,8 @@ const GoogleReviewsCarousel = () => {
 
         <div className="review-card">
           <div className="review-header">
-            <img 
-              src={reviews[currentIndex].profile_photo_url} 
+            <img
+              src={reviews[currentIndex].profile_photo_url}
               alt={reviews[currentIndex].author_name}
               className="reviewer-photo"
             />
@@ -47,15 +47,17 @@ const GoogleReviewsCarousel = () => {
               <h4>{reviews[currentIndex].author_name}</h4>
               <div className="review-rating">
                 {[...Array(5)].map((_, i) => (
-                  <Star 
-                    key={i} 
-                    size={18} 
+                  <Star
+                    key={i}
+                    size={18}
                     fill={i < reviews[currentIndex].rating ? "#fbbf24" : "none"}
                     color="#fbbf24"
                   />
                 ))}
               </div>
-              <span className="review-date">{formatDate(reviews[currentIndex].time)}</span>
+              <span className="review-date">
+                {formatDate(reviews[currentIndex].time)}
+              </span>
             </div>
           </div>
           <p className="review-text">"{reviews[currentIndex].text}"</p>
@@ -70,7 +72,7 @@ const GoogleReviewsCarousel = () => {
         {reviews.map((_, index) => (
           <button
             key={index}
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
+            className={`dot ${index === currentIndex ? "active" : ""}`}
             onClick={() => goToReview(index)}
           />
         ))}

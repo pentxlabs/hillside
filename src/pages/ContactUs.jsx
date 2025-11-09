@@ -139,37 +139,6 @@ const ContactUs = () => {
     }
   };
 
-  const contactMethods = [
-    {
-      icon: Phone,
-      title: "Call Us",
-      info: "077 755 1006",
-      subInfo: "Mon-Thu, Sat-Sun: 7:30 AM - 5:30 PM",
-      action: "tel:+94777551006",
-    },
-    {
-      icon: Mail,
-      title: "Email Us",
-      info: "info@hillside.com",
-      subInfo: "We reply within 24 hours",
-      action: "mailto:info@hillside.com",
-    },
-    {
-      icon: MapPin,
-      title: "Visit Us",
-      info: "No 465 Beligaha Junction",
-      subInfo: "Galle 80000",
-      action: "#",
-    },
-    {
-      icon: MessageCircle,
-      title: "Live Chat",
-      info: "Available 24/7",
-      subInfo: "Instant support",
-      action: "#",
-    },
-  ];
-
   return (
     <div className="contact-page">
       <PageHero
@@ -229,7 +198,7 @@ const ContactUs = () => {
                     <p className="info-line">Friday: Closed</p>
                   </div> */}
                 {/* </div>  */}
-{/* 
+                {/* 
                 <div className="info-item">
                   <div className="info-icon-wrapper">
                     <MapPin size={24} color="#ffffffff" strokeWidth={2} />

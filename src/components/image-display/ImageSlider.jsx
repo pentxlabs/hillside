@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
-import './ImageSlider.css';
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import "./ImageSlider.css";
 
-const ImageSlider = ({ 
-  images, 
-  autoPlay = true, 
+const ImageSlider = ({
+  images,
+  autoPlay = true,
   interval = 5000,
   showDots = true,
   showArrows = true,
-  className = ''
+  className = "",
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(autoPlay);
@@ -17,12 +17,15 @@ const ImageSlider = ({
   const touchEndX = useRef(0);
   const sliderRef = useRef(null);
 
-  const goToSlide = useCallback((index) => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex(index);
-    setTimeout(() => setIsTransitioning(false), 500);
-  }, [isTransitioning]);
+  const goToSlide = useCallback(
+    (index) => {
+      if (isTransitioning) return;
+      setIsTransitioning(true);
+      setCurrentIndex(index);
+      setTimeout(() => setIsTransitioning(false), 500);
+    },
+    [isTransitioning]
+  );
 
   const nextSlide = useCallback(() => {
     if (images.length === 0) return;
@@ -71,16 +74,16 @@ const ImageSlider = ({
   // Keyboard navigation
   useEffect(() => {
     const handleKeyPress = (e) => {
-      if (e.key === 'ArrowLeft') prevSlide();
-      if (e.key === 'ArrowRight') nextSlide();
-      if (e.key === ' ') {
+      if (e.key === "ArrowLeft") prevSlide();
+      if (e.key === "ArrowRight") nextSlide();
+      if (e.key === " ") {
         e.preventDefault();
         togglePlayPause();
       }
     };
 
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
   }, [nextSlide, prevSlide, togglePlayPause]);
 
   if (!images || images.length === 0) {
@@ -92,7 +95,7 @@ const ImageSlider = ({
   }
 
   return (
-    <div 
+    <div
       className={`image-slider ${className}`}
       ref={sliderRef}
       onTouchStart={handleTouchStart}
@@ -103,18 +106,17 @@ const ImageSlider = ({
     >
       {/* Slider Container */}
       <div className="slider-container">
-        <div 
-          className="slider-track"
-          data-current-index={currentIndex}
-        >
+        <div className="slider-track" data-current-index={currentIndex}>
           {images.map((image, index) => (
-            <div 
-              key={index} 
-              className={`slider-slide ${index === currentIndex ? 'active' : ''}`}
+            <div
+              key={index}
+              className={`slider-slide ${
+                index === currentIndex ? "active" : ""
+              }`}
               aria-hidden={index !== currentIndex}
             >
-              <img 
-                src={image.url} 
+              <img
+                src={image.url}
                 alt={image.alt || `Slide ${index + 1}`}
                 loading="lazy"
               />
@@ -132,7 +134,7 @@ const ImageSlider = ({
       {/* Navigation Arrows */}
       {showArrows && images.length > 1 && (
         <>
-          <button 
+          <button
             className="slider-arrow slider-arrow-left"
             onClick={prevSlide}
             aria-label="Previous slide"
@@ -140,7 +142,7 @@ const ImageSlider = ({
           >
             <ChevronLeft size={30} />
           </button>
-          <button 
+          <button
             className="slider-arrow slider-arrow-right"
             onClick={nextSlide}
             aria-label="Next slide"
@@ -157,7 +159,7 @@ const ImageSlider = ({
           {images.map((_, index) => (
             <button
               key={index}
-              className={`slider-dot ${index === currentIndex ? 'active' : ''}`}
+              className={`slider-dot ${index === currentIndex ? "active" : ""}`}
               onClick={() => goToSlide(index)}
               aria-label={`Go to slide ${index + 1}`}
               aria-current={index === currentIndex}

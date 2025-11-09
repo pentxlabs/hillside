@@ -1,4 +1,12 @@
-import { ArrowRight, Phone, Shield, Clock, Heart, Award, Star } from "lucide-react";
+import {
+  ArrowRight,
+  Phone,
+  Shield,
+  Clock,
+  Heart,
+  Award,
+  Star,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
@@ -8,7 +16,6 @@ import { services, features } from "../config/homeConfig";
 import "./HomeContent.css";
 
 const HomeContent = () => {
-  const [statsRef, statsVisible] = useScrollAnimation();
   const [servicesRef, servicesVisible] = useScrollAnimation();
   const [aboutRef, aboutVisible] = useScrollAnimation();
   const [featuresRef, featuresVisible] = useScrollAnimation();
@@ -16,19 +23,19 @@ const HomeContent = () => {
   const [ctaRef, ctaVisible] = useScrollAnimation();
 
   const [reviewForm, setReviewForm] = useState({
-    name: '',
-    email: '',
+    name: "",
+    email: "",
     rating: 5,
-    comment: ''
+    comment: "",
   });
 
   const [showReviewForm, setShowReviewForm] = useState(false);
 
   const handleReviewChange = (e) => {
     const { name, value } = e.target;
-    setReviewForm(prev => ({
+    setReviewForm((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -42,75 +49,76 @@ const HomeContent = () => {
     // For textarea, we need to be extra careful with space key
     e.stopPropagation();
     // Ensure default behavior is not prevented
-    if (e.key === ' ' || e.keyCode === 32) {
+    if (e.key === " " || e.keyCode === 32) {
       e.stopPropagation();
     }
   };
 
   const handleRatingClick = (rating) => {
-    setReviewForm(prev => ({
+    setReviewForm((prev) => ({
       ...prev,
-      rating
+      rating,
     }));
   };
 
   const handleReviewSubmit = (e) => {
     e.preventDefault();
-    
+
     // Create a hidden iframe to submit the form without opening a new page
-    const iframe = document.createElement('iframe');
-    iframe.name = 'hidden_iframe';
-    iframe.style.display = 'none';
+    const iframe = document.createElement("iframe");
+    iframe.name = "hidden_iframe";
+    iframe.style.display = "none";
     document.body.appendChild(iframe);
-    
+
     // Create a form element to submit to Google Forms
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = 'https://docs.google.com/forms/d/e/1FAIpQLScvyuID41oZHrz83Ktj18e_YQu8CYg8f9NjuNtLTYVfWo-sDQ/formResponse';
-    form.target = 'hidden_iframe';
-    
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action =
+      "https://docs.google.com/forms/d/e/1FAIpQLScvyuID41oZHrz83Ktj18e_YQu8CYg8f9NjuNtLTYVfWo-sDQ/formResponse";
+    form.target = "hidden_iframe";
+
     // Add form fields matching Google Form entry IDs from the actual form
-    const nameInput = document.createElement('input');
-    nameInput.type = 'hidden';
-    nameInput.name = 'entry.1366980596'; // Name field
+    const nameInput = document.createElement("input");
+    nameInput.type = "hidden";
+    nameInput.name = "entry.1366980596"; // Name field
     nameInput.value = reviewForm.name;
     form.appendChild(nameInput);
-    
-    const emailInput = document.createElement('input');
-    emailInput.type = 'hidden';
-    emailInput.name = 'entry.1962085851'; // Email field
+
+    const emailInput = document.createElement("input");
+    emailInput.type = "hidden";
+    emailInput.name = "entry.1962085851"; // Email field
     emailInput.value = reviewForm.email;
     form.appendChild(emailInput);
-    
-    const ratingInput = document.createElement('input');
-    ratingInput.type = 'hidden';
-    ratingInput.name = 'entry.1692743323'; // Rating field
+
+    const ratingInput = document.createElement("input");
+    ratingInput.type = "hidden";
+    ratingInput.name = "entry.1692743323"; // Rating field
     ratingInput.value = reviewForm.rating;
     form.appendChild(ratingInput);
-    
-    const commentInput = document.createElement('input');
-    commentInput.type = 'hidden';
-    commentInput.name = 'entry.963216474'; // Review field
+
+    const commentInput = document.createElement("input");
+    commentInput.type = "hidden";
+    commentInput.name = "entry.963216474"; // Review field
     commentInput.value = reviewForm.comment;
     form.appendChild(commentInput);
-    
+
     // Submit the form
     document.body.appendChild(form);
     form.submit();
-    
+
     // Clean up and show thank you message after a short delay
     setTimeout(() => {
       document.body.removeChild(form);
       document.body.removeChild(iframe);
     }, 1000);
-    
+
     // Show thank you message and reset form
-    alert('Thank you for your review! Your feedback has been submitted.');
+    alert("Thank you for your review! Your feedback has been submitted.");
     setReviewForm({
-      name: '',
-      email: '',
+      name: "",
+      email: "",
       rating: 5,
-      comment: ''
+      comment: "",
     });
     setShowReviewForm(false);
   };
@@ -269,11 +277,11 @@ const HomeContent = () => {
           >
             <GoogleReviewsCarousel />
           </div>
-          
+
           {/* Write a Review Section */}
           <div className="write-review-section">
             {!showReviewForm ? (
-              <button 
+              <button
                 className="write-review-button"
                 onClick={() => setShowReviewForm(true)}
               >
@@ -296,7 +304,7 @@ const HomeContent = () => {
                       placeholder="Your name"
                     />
                   </div>
-                  
+
                   <div className="form-group">
                     <label htmlFor="email">Email *</label>
                     <input
@@ -310,7 +318,7 @@ const HomeContent = () => {
                       placeholder="your.email@example.com"
                     />
                   </div>
-                  
+
                   <div className="form-group">
                     <label>Rating *</label>
                     <div className="star-rating">
@@ -318,13 +326,15 @@ const HomeContent = () => {
                         <Star
                           key={star}
                           size={32}
-                          className={`star ${star <= reviewForm.rating ? 'filled' : ''}`}
+                          className={`star ${
+                            star <= reviewForm.rating ? "filled" : ""
+                          }`}
                           onClick={() => handleRatingClick(star)}
                         />
                       ))}
                     </div>
                   </div>
-                  
+
                   <div className="form-group">
                     <label htmlFor="comment">Your Review *</label>
                     <textarea
@@ -340,13 +350,13 @@ const HomeContent = () => {
                       placeholder="Tell us about your experience with HillSide..."
                     />
                   </div>
-                  
+
                   <div className="form-actions">
                     <button type="submit" className="submit-review-button">
                       Submit Review
                     </button>
-                    <button 
-                      type="button" 
+                    <button
+                      type="button"
                       className="cancel-review-button"
                       onClick={() => setShowReviewForm(false)}
                     >
