@@ -1,0 +1,302 @@
+/* ===========================
+   REVIEWS CAROUSEL - PROFESSIONAL & MINIMAL
+   Clean, Sophisticated, User-Friendly
+   =========================== */
+
+.reviews-carousel {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(74, 124, 126, 0.3);
+  color: #4A7C7E;
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+}
+
+.carousel-btn:hover {
+  background: #4A7C7E;
+  border-color: #4A7C7E;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 124, 126, 0.3);
+}
+
+.carousel-btn.prev:hover {
+  transform: translateY(-2px) translateX(-2px);
+}
+
+.carousel-btn.next:hover {
+  transform: translateY(-2px) translateX(2px);
+}
+
+.review-card {
+  background: #ffffff;
+  padding: 40px 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  flex: 1;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(74, 124, 126, 0.15);
+  border-color: rgba(74, 124, 126, 0.3);
+}
+
+.review-header {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.reviewer-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4A7C7E;
+  box-shadow: 0 4px 12px rgba(74, 124, 126, 0.2);
+}
+
+.reviewer-info {
+  flex: 1;
+}
+
+.reviewer-info h4 {
+  font-family: 'Poppins', sans-serif;
+  color: #1a1a2e;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.review-rating {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.review-rating svg {
+  color: #4A7C7E;
+  width: 18px;
+  height: 18px;
+}
+
+.review-date {
+  font-family: 'Inter', sans-serif;
+  color: #6c757d;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.review-text {
+  font-family: 'Inter', sans-serif;
+  color: #2c3e50;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  font-style: italic;
+  position: relative;
+  padding-left: 20px;
+}
+
+.review-text::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -5px;
+  font-size: 2.5rem;
+  color: #4A7C7E;
+  opacity: 0.3;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(74, 124, 126, 0.2);
+  border: 1px solid rgba(74, 124, 126, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #4A7C7E;
+  border-color: #4A7C7E;
+  transform: scale(1.3);
+  box-shadow: 0 2px 8px rgba(74, 124, 126, 0.4);
+}
+
+.dot:hover {
+  background: #4A7C7E;
+  border-color: #4A7C7E;
+  transform: scale(1.2);
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+@media (max-width: 768px) {
+  .carousel-container {
+    gap: 12px;
+  }
+
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .carousel-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .review-card {
+    padding: 30px 24px;
+    min-height: 320px;
+  }
+
+  .reviewer-photo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .reviewer-info h4 {
+    font-size: 1.1rem;
+  }
+
+  .review-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .review-text::before {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-btn.prev,
+  .carousel-btn.next {
+    position: absolute;
+    top: -60px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-btn.prev {
+    right: 55px;
+  }
+
+  .carousel-btn.next {
+    right: 10px;
+  }
+
+  .carousel-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .carousel-container {
+    flex-direction: column;
+  }
+
+  .review-card {
+    width: 100%;
+    padding: 25px 20px;
+  }
+
+  .reviewer-photo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .reviewer-info h4 {
+    font-size: 1.05rem;
+  }
+
+  .review-text {
+    font-size: 0.95rem;
+    padding-left: 15px;
+  }
+
+  .review-text::before {
+    font-size: 1.8rem;
+    top: -8px;
+  }
+
+  .carousel-dots {
+    margin-top: 25px;
+    gap: 10px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* ===========================
+   ACCESSIBILITY
+   =========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-btn,
+  .review-card,
+  .dot {
+    transition: none;
+    animation: none;
+  }
+
+  .carousel-btn:hover,
+  .carousel-btn.prev:hover,
+  .carousel-btn.next:hover {
+    transform: none;
+  }
+
+  .review-card:hover {
+    transform: none;
+  }
+
+  .dot.active,
+  .dot:hover {
+    transform: none;
+  }
+}

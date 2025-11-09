@@ -1,0 +1,421 @@
+/* Mobile-first base styles */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Use fixed height instead of min-height for consistency */
+  overflow: hidden;
+  border-bottom: 2px solid #c9a962;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.hero-section.service-hero,
+.hero-section.service-hero * {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 1px !important;
+  -webkit-font-smoothing: antialiased; /* Better text rendering */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-section.wedding-hero h1 {
+  font-family: Georgia, "Times New Roman", serif !important;
+  letter-spacing: 0.05em !important;
+}
+
+.hero-section.funcity-hero,
+.hero-section.funcity-hero * {
+  font-family: Georgia, "Times New Roman", serif !important;
+  letter-spacing: 1.5px !important;
+}
+
+.hero-section.villas-hero,
+.hero-section.villas-hero * {
+  font-family: Georgia, "Times New Roman", serif !important;
+  letter-spacing: 1px !important;
+}
+
+.hero-slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-slider {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-slider .slider-container {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100%;
+  position: relative;
+}
+
+.hero-slider .slider-slide {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-slider .slider-slide img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(1.01); /* Prevent white edges during transitions */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 90%;
+  max-width: 1200px;
+  padding: 1rem;
+  z-index: 3;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: clamp(1.75rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  background: linear-gradient(
+    90deg,
+    rgba(74, 124, 126, 0.8),
+    #4a7c7e,
+    #ffffff,
+    #4a7c7e,
+    rgba(74, 124, 126, 0.8)
+  );
+  background-size: 300% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: glowingText 6s ease-in-out infinite alternate;
+  text-shadow: 0 0 15px rgba(74, 124, 126, 0.3),
+    0 0 30px rgba(74, 124, 126, 0.2), 0 0 45px rgba(74, 124, 126, 0.1);
+  filter: drop-shadow(0 0 8px rgba(74, 124, 126, 0.2));
+}
+
+.hero-content p {
+  font-size: clamp(0.95rem, 2.5vw, 1.5rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  opacity: 0.95;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 2vw, 1rem);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-button {
+  padding: clamp(0.875rem, 2vw, 1.25rem) clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 600;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  width: clamp(200px, 80%, 300px);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button.primary {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+}
+
+.cta-button.primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(37, 99, 235, 0.2);
+}
+
+.cta-button.primary:active {
+  transform: translateY(1px);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-2px);
+}
+
+.cta-button.secondary:active {
+  transform: translateY(1px);
+}
+
+.hero-stats {
+  display: none;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 1s ease-out;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.2s forwards;
+}
+
+.stagger-animation {
+  animation: fadeInUp 1s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes glowingText {
+  0% {
+    background-position: 0% 50%;
+    filter: brightness(1) contrast(1);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: brightness(1.1) contrast(1.1);
+  }
+  100% {
+    background-position: 200% 50%;
+    filter: brightness(1) contrast(1);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .hero-section {
+    height: 56.25vw; /* Creates a 16:9 ratio (more compact) */
+    min-height: 0;
+    max-height: 35vh; /* Reduced max height */
+  }
+
+  .hero-slider-wrapper {
+    height: 100%;
+    position: relative;
+    padding-top: 56.25%; /* Creates 16:9 ratio */
+  }
+
+  .hero-slider .slider-container {
+    height: 100%;
+    padding-bottom: 0 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .hero-slider .slider-slide img {
+    object-fit: cover !important;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
+
+  .hero-content {
+    padding: 0 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 640px) {
+  .hero-buttons {
+    flex-direction: row;
+    max-width: none;
+  }
+
+  .cta-button {
+    width: auto;
+    min-width: 200px;
+  }
+
+  .hero-content {
+    padding: 0 2rem;
+  }
+
+  .hero-section.service-hero,
+  .hero-section.service-hero * {
+    letter-spacing: 1.5px !important;
+  }
+
+  .hero-section.funcity-hero,
+  .hero-section.funcity-hero * {
+    letter-spacing: 2px !important;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .hero-content {
+    padding: 0 3rem;
+  }
+
+  .hero-section.service-hero,
+  .hero-section.service-hero * {
+    letter-spacing: 2px !important;
+  }
+
+  .hero-section.funcity-hero,
+  .hero-section.funcity-hero * {
+    letter-spacing: 3px !important;
+  }
+
+  .hero-section.villas-hero,
+  .hero-section.villas-hero * {
+    letter-spacing: 2px !important;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+  }
+}
+
+/* Large desktop styles */
+@media (min-width: 1280px) {
+  .hero-content {
+    width: 80%;
+  }
+
+  .cta-button {
+    min-width: 220px;
+  }
+}
+
+/* Portrait orientation specific styles */
+@media screen and (orientation: portrait) {
+  .hero-slider .slider-slide img {
+    object-position: center;
+  }
+}
+
+/* Landscape orientation specific styles */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .hero-section {
+    height: 100vh;
+  }
+
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .hero-content p {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .cta-button {
+    padding: 0.75rem 1.25rem;
+  }
+}

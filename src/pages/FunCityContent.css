@@ -1,0 +1,753 @@
+/* ===========================
+   FUNCITY PAGE - PROFESSIONAL & MINIMAL DESIGN
+   Clean, Sophisticated, User-Friendly
+   =========================== */
+
+.funcity-content {
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: #ffffff;
+  color: #2c3e50;
+}
+
+.funcity-content .section-header h2,
+.funcity-content h1,
+.funcity-content h2,
+.funcity-content h3,
+.funcity-content h4 {
+  font-family: 'Poppins', sans-serif !important;
+  letter-spacing: -0.01em;
+}
+
+/* ===========================
+   QUICK INFO SECTION
+   =========================== */
+
+.quick-info-section {
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+  padding: 90px 24px;
+  border-bottom: 1px solid rgba(74, 124, 126, 0.1);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.info-item {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  position: relative;
+  padding: 32px 24px;
+  width: 100%;
+}
+
+.info-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(74, 124, 126, 0.2);
+  border-color: rgba(74, 124, 126, 0.3);
+}
+
+.info-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  background: rgba(74, 124, 126, 0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(74, 124, 126, 0.15);
+  transition: all 0.3s ease;
+  margin: 0 auto 20px;
+}
+
+.info-item:hover .info-icon-wrapper {
+  background: #4a7c7e;
+  border-color: #4a7c7e;
+  box-shadow: 0 4px 12px rgba(74, 124, 126, 0.3);
+}
+
+.info-icon {
+  color: #4a7c7e;
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+.info-item:hover .info-icon {
+  color: #ffffff;
+}
+
+.info-item h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.info-item p {
+  font-family: 'Inter', sans-serif;
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+/* ===========================
+   RENTALS SECTION
+   =========================== */
+
+.rentals-section {
+  padding: 100px 24px;
+  background: #ffffff;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.8rem);
+  color: #1a1a2e;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  background: linear-gradient(135deg, #1a1a2e, #4A7C7E, #3d696b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #4A7C7E;
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+.section-header p {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  color: #6c757d;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rentals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.rental-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.rental-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(74, 124, 126, 0.15);
+  border-color: rgba(74, 124, 126, 0.3);
+}
+
+.rental-image-slider {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #4A7C7E;
+  aspect-ratio: 4/3;
+}
+
+.rental-image-slider .image-slider {
+  box-shadow: none;
+  border-radius: 0;
+  height: 100%;
+}
+
+.rental-image-slider .slider-container {
+  padding-bottom: 0;
+  height: 100%;
+}
+
+.rental-image-slider .slider-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.rental-image-slider .slider-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.category-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, #4A7C7E, #3d696b);
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+}
+
+.rental-content {
+  padding: 28px 24px;
+}
+
+.rental-content h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.375rem;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.rental-description {
+  font-family: 'Inter', sans-serif;
+  color: #6c757d;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 0.9375rem;
+}
+
+.rental-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.rental-price .amount {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4A7C7E;
+}
+
+.rental-price .duration {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.details-btn {
+  width: 100%;
+  background: #4A7C7E;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 6px;
+  border: 2px solid #4A7C7E;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9375rem;
+  letter-spacing: 0.01em;
+}
+
+.details-btn:hover {
+  background: #3d696b;
+  border-color: #3d696b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 124, 126, 0.3);
+}
+
+/* ===========================
+   MODAL STYLES
+   =========================== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 26, 46, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 8px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 2px solid #4A7C7E;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #4A7C7E;
+  color: #ffffff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: #3d696b;
+  transform: rotate(90deg);
+}
+
+.close-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  padding: 40px;
+}
+
+.modal-image-section {
+  position: sticky;
+  top: 0;
+  height: fit-content;
+}
+
+.modal-image-section .image-slider {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  border: 3px solid #4A7C7E;
+  overflow: hidden;
+}
+
+.modal-image-section .slider-container {
+  padding-bottom: 75%;
+}
+
+.modal-category {
+  background: linear-gradient(135deg, #4A7C7E, #3d696b);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+}
+
+.modal-details h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.25rem;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.modal-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid rgba(74, 124, 126, 0.1);
+}
+
+.price-amount {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4A7C7E;
+}
+
+.price-duration {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  color: #6c757d;
+}
+
+.description-section,
+.specifications-section,
+.features-section,
+.includes-section {
+  margin-bottom: 32px;
+}
+
+.modal-details h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  color: #1a1a2e;
+  margin-bottom: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.description-section p {
+  font-family: 'Inter', sans-serif;
+  color: #6c757d;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.specs-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.spec-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.spec-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #1a1a2e;
+  text-transform: capitalize;
+}
+
+.spec-value {
+  font-family: 'Inter', sans-serif;
+  color: #6c757d;
+}
+
+.modal-features-list,
+.includes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.modal-features-list li,
+.includes-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  color: #2c3e50;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-family: 'Inter', sans-serif;
+}
+
+.modal-features-list li svg,
+.includes-list li svg {
+  color: #4A7C7E;
+  flex-shrink: 0;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 2px solid rgba(74, 124, 126, 0.1);
+}
+
+.book-now-btn {
+  flex: 1;
+  background: #4A7C7E;
+  color: #ffffff;
+  padding: 16px 32px;
+  border-radius: 6px;
+  border: 2px solid #4A7C7E;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.01em;
+}
+
+.book-now-btn:hover {
+  background: #3d696b;
+  border-color: #3d696b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(74, 124, 126, 0.3);
+}
+
+.close-modal-btn {
+  flex: 1;
+  background: transparent;
+  color: #1a1a2e;
+  padding: 16px 32px;
+  border-radius: 6px;
+  border: 2px solid #1a1a2e;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.01em;
+}
+
+.close-modal-btn:hover {
+  background: #1a1a2e;
+  color: #ffffff;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+@media (max-width: 968px) {
+  .quick-info-section {
+    padding: 60px 20px;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .rentals-section {
+    padding: 60px 20px;
+  }
+
+  .rentals-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .rental-content {
+    padding: 20px;
+  }
+
+  .rental-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .modal-body {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quick-info-section {
+    padding: 50px 15px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .info-item {
+    padding: 25px 20px;
+    margin: 0 5px;
+  }
+
+  .info-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .info-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .info-item p {
+    font-size: 0.95rem;
+  }
+
+  .rentals-section {
+    padding: 50px 15px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .section-header h2 {
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+
+  .rentals-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .rental-card {
+    margin: 0 5px;
+  }
+
+  .rental-content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .rental-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .rental-description {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+
+  .rental-price {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .rental-price .amount {
+    font-size: 1.3rem;
+  }
+
+  .modal-body {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .modal-image-section {
+    position: relative;
+  }
+
+  .modal-details h2 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .modal-price {
+    justify-content: center;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .spec-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-info-section {
+    padding: 40px 10px;
+  }
+
+  .info-item {
+    padding: 20px 15px;
+    margin: 0 2px;
+  }
+
+  .info-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .info-item h4 {
+    font-size: 1.1rem;
+  }
+
+  .info-item p {
+    font-size: 0.9rem;
+  }
+
+  .rentals-section {
+    padding: 40px 10px;
+  }
+
+  .rental-card {
+    margin: 0 2px;
+  }
+
+  .rental-content {
+    padding: 15px;
+  }
+
+  .rental-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .rental-description {
+    font-size: 0.9rem;
+  }
+
+  .rental-price .amount {
+    font-size: 1.2rem;
+  }
+
+  .modal-content {
+    margin: 10px;
+    max-width: calc(100vw - 20px);
+  }
+
+  .modal-body {
+    padding: 15px;
+  }
+
+  .modal-details h2 {
+    font-size: 1.3rem;
+  }
+
+  .price-amount {
+    font-size: 1.8rem;
+  }
+
+  .description-section p {
+    font-size: 0.9rem;
+  }
+
+  .modal-actions .book-now-btn,
+  .modal-actions .close-modal-btn {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+
+  .category-badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+}
