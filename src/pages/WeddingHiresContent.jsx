@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Car, Star } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import PageHero from "../components/PageHero";
-import { vehicles, stats, processSteps } from "../config/weddingHiresConfig";
+import { vehicles, processSteps } from "../config/weddingHiresConfig";
 import "./WeddingHiresContent.css";
 
 const iconMap = {
@@ -76,7 +76,6 @@ const VehicleProduct = ({ vehicle }) => {
 };
 
 const WeddingHiresContent = () => {
-  const [statsRef, statsVisible] = useScrollAnimation();
   const [servicesRef, servicesVisible] = useScrollAnimation();
   const [processRef, processVisible] = useScrollAnimation();
 

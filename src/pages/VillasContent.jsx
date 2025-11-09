@@ -12,12 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import PageHero from "../components/PageHero";
-import {
-  villas,
-  stats,
-  amenities,
-  locationFeatures,
-} from "../config/villasConfig";
+import { villas, amenities, locationFeatures } from "../config/villasConfig";
 import "./VillasContent.css";
 
 const iconMap = {
@@ -97,7 +92,6 @@ const VillaProduct = ({ villa }) => {
 };
 
 const VillasContent = () => {
-  const [statsRef, statsVisible] = useScrollAnimation();
   const [villasRef, villasVisible] = useScrollAnimation();
   const [amenitiesRef, amenitiesVisible] = useScrollAnimation();
 
