@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Clock, Send } from "lucide-react";
 import PageHero from "../components/PageHero";
 import { useLocation } from "react-router-dom";
 import "./ContactUs.css";
